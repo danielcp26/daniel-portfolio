@@ -7,6 +7,7 @@
 - Put your CV at `public/CV_DanielCP.pdf`.
 - Use relative paths (`./images/...`) so GitHub Pages works on a subpath.
 
+
 ## 2) Install & Run locally
 ```bash
 npm install
