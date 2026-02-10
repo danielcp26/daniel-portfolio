@@ -233,6 +233,82 @@ export default function Home() {
         </a>
       </section>
 
+      {/* Videos Section */}
+      <section id="videos" className="py-20 bg-emerald-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-gray-900">Selected Videos</h2>
+            <p className="text-sm text-gray-600">Short, curated videos related to my skills</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* VS Code + Python */}
+            <div className="bg-white rounded-2xl shadow p-4">
+              <h3 className="text-lg font-semibold mb-3">VS Code — Python Workflow</h3>
+              <div className="aspect-video bg-black rounded overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed?listType=search&list=visual+studio+code+python+tutorial"
+                  title="VS Code Python"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* SQL */}
+            <div className="bg-white rounded-2xl shadow p-4">
+              <h3 className="text-lg font-semibold mb-3">SQL — Full Tutorial</h3>
+              <div className="aspect-video bg-black rounded overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed?listType=search&list=sql+tutorial+full+course"
+                  title="SQL Tutorial"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Azure ML */}
+            <div className="bg-white rounded-2xl shadow p-4">
+              <h3 className="text-lg font-semibold mb-3">Azure Machine Learning — Deploy Models</h3>
+              <div className="aspect-video bg-black rounded overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed?listType=search&list=azure+machine+learning+deploy+model"
+                  title="Azure ML"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Power BI */}
+            <div className="bg-white rounded-2xl shadow p-4">
+              <h3 className="text-lg font-semibold mb-3">Power BI — Dashboarding</h3>
+              <div className="aspect-video bg-black rounded overflow-hidden">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed?listType=search&list=power+bi+dashboard+tutorial"
+                  title="Power BI"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section with Modern HD Icons */}
       <section id="about" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
