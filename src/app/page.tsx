@@ -10,7 +10,7 @@ const projects = [
     id: 1,
     title: "CRautos Price Prediction & Market Dashboard (Costa Rica)",
     description: "End-to-end project: Selenium scraping, cleaning, feature engineering and regression models to predict used car prices and visualize market trends.",
-    image: "/projects/project-1.png",
+    image: "/projects/project-1.jpg",
     tools: ["Python", "Machine Learning", "Data Analysis", "Interactive Dashboard"],
     links: [
       { text: "Python + ML", url: "https://github.com/danielcp26/ML_Projects/blob/main/CRautos%20Prediction.ipynb" },
@@ -21,7 +21,7 @@ const projects = [
     id: 2,
     title: "RAG Medical Assistant",
     description: "A Retrieval-Augmented Generation chatbot for medical Q&A, built with Python and deployed on Azure ML.",
-    image: "/projects/project-2.png",
+    image: "/projects/project-2.jpg",
     tools: ["Python", "Azure ML", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Notebook", url: "https://github.com/danielcp26/MedicalAssistantBot/blob/main/MedicalAssistantProject.ipynb" }
@@ -31,7 +31,7 @@ const projects = [
     id: 3,
     title: "Used Cars Price Prediction",
     description: "EDA, feature engineering and regression modeling to estimate used car prices using scikit-learn and interpretable features.",
-    image: "/projects/project-3.png",
+    image: "/projects/project-3.jpg",
     tools: ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Used%20Cars%20Prediction.ipynb" }
@@ -41,7 +41,7 @@ const projects = [
     id: 4,
     title: "Olympic Medals Prediction",
     description: "Modeling and predicting country medal counts using socio-economic features and regression techniques.",
-    image: "/projects/project-4.png",
+    image: "/projects/project-4.jpg",
     tools: ["Python", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Olympic_medals.ipynb" }
@@ -51,7 +51,7 @@ const projects = [
     id: 5,
     title: "Remote Work Data Analysis",
     description: "EDA and dashboards studying remote vs onsite work impacts, employee well-being, and trends visualization.",
-    image: "/projects/project-5.png",
+    image: "/projects/project-5.jpg",
     tools: ["Python", "Tableau", "Data Analysis"],
     links: [
       { text: "Python Analysis", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Remote_Work.ipynb" },
@@ -62,7 +62,7 @@ const projects = [
     id: 6,
     title: "Boston House Price Prediction",
     description: "Comparative regression study on the Boston housing dataset, evaluating regularization and model performance.",
-    image: "/projects/project-6.png",
+    image: "/projects/project-6.jpg",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Regression%20Project%20Boston%20House%20Price%20Prediction.ipynb" }
@@ -72,7 +72,7 @@ const projects = [
     id: 7,
     title: "COVID-19 Data Analysis (SQL)",
     description: "Advanced PostgreSQL queries, window functions and views applied to COVID-19 datasets for trend analysis.",
-    image: "/projects/project-7.png",
+    image: "/projects/project-7.jpg",
     tools: ["SQL", "PostgreSQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/CovidProjectSQL.sql" }
@@ -82,7 +82,7 @@ const projects = [
     id: 8,
     title: "Iris Flower Classification",
     description: "Baseline classifiers (LR/KNN/Tree/SVM) with hyperparameter tuning applied to the iris dataset.",
-    image: "/projects/project-8.png",
+    image: "/projects/project-8.jpg",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/ML_Projects/blob/main/Iris.ipynb" }
@@ -92,7 +92,7 @@ const projects = [
     id: 9,
     title: "British Airways Review Dashboard",
     description: "Customer satisfaction analysis and an interactive Tableau dashboard for airline service quality insights.",
-    image: "/projects/project-9.png",
+    image: "/projects/project-9.jpg",
     tools: ["Tableau", "Data Analysis"],
     links: [
       { text: "View Dashboard", url: "https://public.tableau.com/app/profile/daniel.chac.n.p.rez/viz/BritishAirwaysReview_17443423700870/Dashboard1?publish=yes" }
@@ -102,7 +102,7 @@ const projects = [
     id: 10,
     title: "Nashville Housing Data Cleaning",
     description: "SQL-driven data cleaning using SPLIT_PART, CASE and window functions to standardize housing datasets.",
-    image: "/projects/project-10.png",
+    image: "/projects/project-10.jpg",
     tools: ["SQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/Nashville_Housing.sql" }
@@ -117,6 +117,14 @@ export default function Home() {
   const [selectedTools, setSelectedTools] = useState<string[]>([]);
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [activeTool, setActiveTool] = useState<string | null>(null);
+  // Map tools to demo GIFs or images (files in public/projects)
+  const toolDemos: Record<string, string> = {
+    'Python': '/projects/vsGIF.gif',
+    'SQL': '/projects/SQLgif.gif',
+    'Power BI': '/projects/PBIgif.gif',
+    'Tableau': '/projects/tableauGIF.gif'
+  };
 
   // Filter projects based on selected tools
   useEffect(() => {
@@ -183,7 +191,6 @@ export default function Home() {
             </svg>
           </div>
         </div>
-      </section>
         {/* Science-themed Animated Background Elements */}
         <div className="absolute inset-0">
           {/* Floating molecular structures */}
@@ -271,78 +278,34 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Videos Section */}
-      <section id="videos" className="py-20 bg-emerald-50">
+      {/* Videos section removed per request */}
+
+      {/* Tools Demo Section */}
+      <section id="tools" className="py-12 bg-white/5">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Selected Videos</h2>
-            <p className="text-sm text-gray-600">Short, curated videos related to my skills</p>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">Tools Spotlight</h2>
+            <p className="text-sm text-gray-600">Click a tool to preview a demo</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* VS Code + Python */}
-            <div className="bg-white rounded-2xl shadow p-4">
-              <h3 className="text-lg font-semibold mb-3">VS Code — Python Workflow</h3>
-              <div className="aspect-video bg-black rounded overflow-hidden">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed?listType=search&list=visual+studio+code+python+tutorial"
-                  title="VS Code Python"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
+          <div className="flex flex-wrap gap-3 mb-6">
+            {Object.keys(toolDemos).map((tool) => (
+              <button
+                key={tool}
+                onClick={() => setActiveTool(tool)}
+                className={`px-3 py-2 rounded-full text-sm font-medium ${activeTool === tool ? 'bg-emerald-600 text-white' : 'bg-white/10 text-white'}`}
+              >
+                {tool}
+              </button>
+            ))}
+          </div>
 
-            {/* SQL */}
-            <div className="bg-white rounded-2xl shadow p-4">
-              <h3 className="text-lg font-semibold mb-3">SQL — Full Tutorial</h3>
-              <div className="aspect-video bg-black rounded overflow-hidden">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed?listType=search&list=sql+tutorial+full+course"
-                  title="SQL Tutorial"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Azure ML */}
-            <div className="bg-white rounded-2xl shadow p-4">
-              <h3 className="text-lg font-semibold mb-3">Azure Machine Learning — Deploy Models</h3>
-              <div className="aspect-video bg-black rounded overflow-hidden">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed?listType=search&list=azure+machine+learning+deploy+model"
-                  title="Azure ML"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* Power BI */}
-            <div className="bg-white rounded-2xl shadow p-4">
-              <h3 className="text-lg font-semibold mb-3">Power BI — Dashboarding</h3>
-              <div className="aspect-video bg-black rounded overflow-hidden">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed?listType=search&list=power+bi+dashboard+tutorial"
-                  title="Power BI"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
+          <div className="rounded-2xl overflow-hidden bg-black p-4 flex items-center justify-center" style={{minHeight: 220}}>
+            {activeTool ? (
+              <img src={toolDemos[activeTool]} alt={activeTool} className="max-h-72 object-contain" />
+            ) : (
+              <p className="text-gray-300">Select a tool to preview its demo.</p>
+            )}
           </div>
         </div>
       </section>

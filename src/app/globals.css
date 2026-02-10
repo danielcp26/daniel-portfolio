@@ -74,7 +74,6 @@
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,0.06);
   }
-  }
 }
 
 @keyframes spin-slow {
