@@ -10,7 +10,7 @@ const projects = [
     id: 1,
     title: "CRautos Price Prediction & Market Dashboard (Costa Rica)",
     description: "End-to-end project: Selenium scraping from CRautos, robust cleaning and feature engineering (brand, model, year, mileage, transmission, fuel, location), regression modeling for price prediction, and an interactive dashboard to explore market trends, depreciation curves, and fair-price ranges.",
-    image: "https://ext.same-assets.com/433100065/319294472.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/ML_Projects",
     tools: ["Python", "Machine Learning", "Data Analysis", "Interactive Dashboard"],
     links: [
       { text: "Python + ML", url: "https://github.com/danielcp26/ML_Projects/blob/main/CRautos%20Prediction.ipynb" },
@@ -21,7 +21,7 @@ const projects = [
     id: 2,
     title: "Retrieval-Augmented Generation (RAG) Medical Assistant Project",
     description: "This project implements a medical assistant chatbot powered by a Retrieval-Augmented Generation (RAG) pipeline. Built with Python and deployed on Azure ML Studio.",
-    image: "https://ext.same-assets.com/433100065/2768637537.png",
+    image: "https://opengraph.githubassets.com/1/danielcp26/MedicalAssistantBot",
     tools: ["Python", "Azure ML", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Notebook", url: "https://github.com/danielcp26/MedicalAssistantBot/blob/main/MedicalAssistantProject.ipynb" }
@@ -31,7 +31,7 @@ const projects = [
     id: 3,
     title: "Used Cars Price Prediction",
     description: "EDA + feature engineering + regression models to estimate used car prices. Comprehensive analysis using Python with pandas and scikit-learn.",
-    image: "https://ext.same-assets.com/433100065/314994555.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/MIT_Data_Science_Projects",
     tools: ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Used%20Cars%20Prediction.ipynb" }
@@ -41,7 +41,7 @@ const projects = [
     id: 4,
     title: "Olympic Medals Prediction",
     description: "Predicting country medal counts using socio-economic features and machine learning. Advanced statistical modeling with Python.",
-    image: "https://ext.same-assets.com/433100065/2509612298.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/Oeson_Internship",
     tools: ["Python", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Olympic_medals.ipynb" }
@@ -51,7 +51,7 @@ const projects = [
     id: 5,
     title: "Remote Work Data Analysis",
     description: "Exploratory data analysis on remote vs onsite impacts with visualizations. Interactive dashboard for trends and employee well-being insights.",
-    image: "https://ext.same-assets.com/433100065/2645106516.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/Oeson_Internship",
     tools: ["Python", "Tableau", "Data Analysis"],
     links: [
       { text: "Python Analysis", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Remote_Work.ipynb" },
@@ -62,7 +62,7 @@ const projects = [
     id: 6,
     title: "Boston House Price Prediction",
     description: "Classic regression project comparing linear models with regularization. Comprehensive machine learning approach to real estate pricing.",
-    image: "https://ext.same-assets.com/433100065/2060312288.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/MIT_Data_Science_Projects",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Regression%20Project%20Boston%20House%20Price%20Prediction.ipynb" }
@@ -72,7 +72,7 @@ const projects = [
     id: 7,
     title: "COVID-19 Data Analysis with PostgreSQL",
     description: "Window functions, CTEs, and views on global COVID data. Advanced SQL techniques for comprehensive data exploration and insights.",
-    image: "https://ext.same-assets.com/433100065/3960213289.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/SQL_Projects",
     tools: ["SQL", "PostgreSQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/CovidProjectSQL.sql" }
@@ -82,7 +82,7 @@ const projects = [
     id: 8,
     title: "Iris Flower Classification",
     description: "Baseline classification with LR/KNN/Tree/SVM + GridSearchCV. Machine learning fundamentals applied to the classic iris dataset.",
-    image: "https://ext.same-assets.com/433100065/2894079577.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/ML_Projects",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/ML_Projects/blob/main/Iris.ipynb" }
@@ -92,7 +92,7 @@ const projects = [
     id: 9,
     title: "British Airways Review Dashboard",
     description: "Customer satisfaction analysis across routes and segments. Interactive Tableau dashboard providing insights into airline service quality and performance metrics.",
-    image: "https://ext.same-assets.com/433100065/1332924975.png",
+    image: "/projects/project-9.svg",
     tools: ["Tableau", "Data Analysis"],
     links: [
       { text: "View Dashboard", url: "https://public.tableau.com/app/profile/daniel.chac.n.p.rez/viz/BritishAirwaysReview_17443423700870/Dashboard1?publish=yes" }
@@ -102,7 +102,7 @@ const projects = [
     id: 10,
     title: "Nashville Housing Data Cleaning",
     description: "Data standardization with SPLIT_PART, CASE, and ROW_NUMBER. Advanced SQL techniques for cleaning and preparing real estate data for analysis.",
-    image: "https://ext.same-assets.com/433100065/3621619449.jpeg",
+    image: "https://opengraph.githubassets.com/1/danielcp26/SQL_Projects",
     tools: ["SQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/Nashville_Housing.sql" }
@@ -395,11 +395,14 @@ export default function Home() {
             {filteredProjects.map((project, index) => (
               <div key={project.id} className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className={`${index % 2 === 1 ? 'order-1 md:order-2' : 'order-2 md:order-1'}`}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover rounded-lg shadow-lg"
-                  />
+                  <div className="relative group overflow-hidden rounded-xl shadow-2xl">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 md:h-72 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                 </div>
                 <div className={`${index % 2 === 1 ? 'order-2 md:order-1' : 'order-1 md:order-2'}`}>
                   <h3 className="text-3xl font-semibold mb-4 text-gray-800">{project.title}</h3>
@@ -410,7 +413,7 @@ export default function Home() {
                     {project.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
+                        className="px-3 py-1 text-sm bg-emerald-50 text-emerald-800 rounded-full shadow-sm"
                       >
                         {tool}
                       </span>
@@ -425,7 +428,7 @@ export default function Home() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block px-4 py-2 mr-2 mb-2 border-2 border-gray-400 text-gray-700 rounded-lg hover:bg-gray-700 hover:text-white transition-all duration-300"
+                        className="inline-block px-4 py-2 mr-2 mb-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-lg shadow-sm hover:opacity-90 transition-opacity duration-200"
                       >
                         {link.text}
                       </a>
@@ -453,7 +456,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gradient-to-br from-green-900 via-emerald-800 to-teal-700 text-white py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="mb-2">© Daniel Chacón Pérez 2025</p>
+          <p className="mb-2">© Daniel Chacón Pérez 2026</p>
           <p className="text-sm opacity-75">Built with Next.js and Tailwind CSS</p>
         </div>
       </footer>
