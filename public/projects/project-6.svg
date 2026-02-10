@@ -5,6 +5,10 @@
       <stop offset="100%" stop-color="#60a5fa"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="800" fill="url(#g6)" />
-  <text x="50%" y="50%" font-size="48" font-family="Arial, Helvetica, sans-serif" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Project 6</text>
+  <rect width="1200" height="800" fill="url(#g6)" rx="24"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="480" height="320" rx="12" fill="#ffffff18" />
+    <text x="0" y="420" font-size="40" font-family="Inter, Arial, sans-serif" fill="#ffffff" font-weight="700">Boston House Price Prediction</text>
+    <text x="0" y="468" font-size="20" font-family="Inter, Arial, sans-serif" fill="#e6f7ff">Regression · Regularization · Comparisons</text>
+  </g>
 </svg>

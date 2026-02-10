@@ -5,6 +5,10 @@
       <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.6"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="800" fill="url(#g10)" />
-  <text x="50%" y="50%" font-size="48" font-family="Arial, Helvetica, sans-serif" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Project 10</text>
+  <rect width="1200" height="800" fill="url(#g10)" rx="24"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="480" height="320" rx="16" fill="#ffffff18" />
+    <text x="0" y="420" font-size="40" font-family="Inter, Arial, sans-serif" fill="#ffffff" font-weight="700">Nashville Housing Data Cleaning</text>
+    <text x="0" y="468" font-size="20" font-family="Inter, Arial, sans-serif" fill="#e6faff">SQL cleaning · SPLIT_PART · ROW_NUMBER</text>
+  </g>
 </svg>

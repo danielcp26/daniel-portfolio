@@ -9,8 +9,8 @@ const projects = [
   {
     id: 1,
     title: "CRautos Price Prediction & Market Dashboard (Costa Rica)",
-    description: "End-to-end project: Selenium scraping from CRautos, robust cleaning and feature engineering (brand, model, year, mileage, transmission, fuel, location), regression modeling for price prediction, and an interactive dashboard to explore market trends, depreciation curves, and fair-price ranges.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/ML_Projects",
+    description: "End-to-end project: Selenium scraping, cleaning, feature engineering and regression models to predict used car prices and visualize market trends.",
+    image: "/projects/project-1.svg",
     tools: ["Python", "Machine Learning", "Data Analysis", "Interactive Dashboard"],
     links: [
       { text: "Python + ML", url: "https://github.com/danielcp26/ML_Projects/blob/main/CRautos%20Prediction.ipynb" },
@@ -19,9 +19,9 @@ const projects = [
   },
   {
     id: 2,
-    title: "Retrieval-Augmented Generation (RAG) Medical Assistant Project",
-    description: "This project implements a medical assistant chatbot powered by a Retrieval-Augmented Generation (RAG) pipeline. Built with Python and deployed on Azure ML Studio.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/MedicalAssistantBot",
+    title: "RAG Medical Assistant",
+    description: "A Retrieval-Augmented Generation chatbot for medical Q&A, built with Python and deployed on Azure ML.",
+    image: "/projects/project-2.svg",
     tools: ["Python", "Azure ML", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Notebook", url: "https://github.com/danielcp26/MedicalAssistantBot/blob/main/MedicalAssistantProject.ipynb" }
@@ -30,8 +30,8 @@ const projects = [
   {
     id: 3,
     title: "Used Cars Price Prediction",
-    description: "EDA + feature engineering + regression models to estimate used car prices. Comprehensive analysis using Python with pandas and scikit-learn.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/MIT_Data_Science_Projects",
+    description: "EDA, feature engineering and regression modeling to estimate used car prices using scikit-learn and interpretable features.",
+    image: "/projects/project-3.svg",
     tools: ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Used%20Cars%20Prediction.ipynb" }
@@ -40,8 +40,8 @@ const projects = [
   {
     id: 4,
     title: "Olympic Medals Prediction",
-    description: "Predicting country medal counts using socio-economic features and machine learning. Advanced statistical modeling with Python.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/Oeson_Internship",
+    description: "Modeling and predicting country medal counts using socio-economic features and regression techniques.",
+    image: "/projects/project-4.svg",
     tools: ["Python", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Olympic_medals.ipynb" }
@@ -50,8 +50,8 @@ const projects = [
   {
     id: 5,
     title: "Remote Work Data Analysis",
-    description: "Exploratory data analysis on remote vs onsite impacts with visualizations. Interactive dashboard for trends and employee well-being insights.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/Oeson_Internship",
+    description: "EDA and dashboards studying remote vs onsite work impacts, employee well-being, and trends visualization.",
+    image: "/projects/project-5.svg",
     tools: ["Python", "Tableau", "Data Analysis"],
     links: [
       { text: "Python Analysis", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Remote_Work.ipynb" },
@@ -61,8 +61,8 @@ const projects = [
   {
     id: 6,
     title: "Boston House Price Prediction",
-    description: "Classic regression project comparing linear models with regularization. Comprehensive machine learning approach to real estate pricing.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/MIT_Data_Science_Projects",
+    description: "Comparative regression study on the Boston housing dataset, evaluating regularization and model performance.",
+    image: "/projects/project-6.svg",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Regression%20Project%20Boston%20House%20Price%20Prediction.ipynb" }
@@ -70,9 +70,9 @@ const projects = [
   },
   {
     id: 7,
-    title: "COVID-19 Data Analysis with PostgreSQL",
-    description: "Window functions, CTEs, and views on global COVID data. Advanced SQL techniques for comprehensive data exploration and insights.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/SQL_Projects",
+    title: "COVID-19 Data Analysis (SQL)",
+    description: "Advanced PostgreSQL queries, window functions and views applied to COVID-19 datasets for trend analysis.",
+    image: "/projects/project-7.svg",
     tools: ["SQL", "PostgreSQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/CovidProjectSQL.sql" }
@@ -81,8 +81,8 @@ const projects = [
   {
     id: 8,
     title: "Iris Flower Classification",
-    description: "Baseline classification with LR/KNN/Tree/SVM + GridSearchCV. Machine learning fundamentals applied to the classic iris dataset.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/ML_Projects",
+    description: "Baseline classifiers (LR/KNN/Tree/SVM) with hyperparameter tuning applied to the iris dataset.",
+    image: "/projects/project-8.svg",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/ML_Projects/blob/main/Iris.ipynb" }
@@ -91,7 +91,7 @@ const projects = [
   {
     id: 9,
     title: "British Airways Review Dashboard",
-    description: "Customer satisfaction analysis across routes and segments. Interactive Tableau dashboard providing insights into airline service quality and performance metrics.",
+    description: "Customer satisfaction analysis and an interactive Tableau dashboard for airline service quality insights.",
     image: "/projects/project-9.svg",
     tools: ["Tableau", "Data Analysis"],
     links: [
@@ -101,8 +101,8 @@ const projects = [
   {
     id: 10,
     title: "Nashville Housing Data Cleaning",
-    description: "Data standardization with SPLIT_PART, CASE, and ROW_NUMBER. Advanced SQL techniques for cleaning and preparing real estate data for analysis.",
-    image: "https://opengraph.githubassets.com/1/danielcp26/SQL_Projects",
+    description: "SQL-driven data cleaning using SPLIT_PART, CASE and window functions to standardize housing datasets.",
+    image: "/projects/project-10.svg",
     tools: ["SQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/Nashville_Housing.sql" }

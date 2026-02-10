@@ -5,6 +5,14 @@
       <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="800" fill="url(#g2)" />
-  <text x="50%" y="50%" font-size="48" font-family="Arial, Helvetica, sans-serif" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Project 2</text>
+  <rect width="1200" height="800" fill="url(#g2)" rx="24"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="440" height="360" rx="14" fill="#ffffff18" />
+    <g transform="translate(520,40)">
+      <rect x="0" y="0" width="220" height="120" rx="12" fill="#ffffff20" />
+      <circle cx="320" cy="60" r="44" fill="#ffffff22" />
+    </g>
+    <text x="0" y="420" font-size="40" font-family="Inter, Arial, sans-serif" fill="#ffffff" font-weight="700">RAG Medical Assistant</text>
+    <text x="0" y="468" font-size="20" font-family="Inter, Arial, sans-serif" fill="#eef6ff">Retrieval-augmented chatbot · Azure ML</text>
+  </g>
 </svg>

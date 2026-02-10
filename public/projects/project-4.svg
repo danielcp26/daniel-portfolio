@@ -5,6 +5,14 @@
       <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="800" fill="url(#g4)" />
-  <text x="50%" y="50%" font-size="48" font-family="Arial, Helvetica, sans-serif" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Project 4</text>
+  <rect width="1200" height="800" fill="url(#g4)" rx="24"/>
+  <g transform="translate(80,120)">
+    <rect x="0" y="0" width="480" height="320" rx="16" fill="#ffffff18" />
+    <g transform="translate(520,40)">
+      <rect x="0" y="0" width="220" height="120" rx="12" fill="#ffffff22" />
+      <text x="16" y="70" font-size="18" fill="#ffffff">Socio-economic features</text>
+    </g>
+    <text x="0" y="420" font-size="40" font-family="Inter, Arial, sans-serif" fill="#ffffff" font-weight="700">Olympic Medals Prediction</text>
+    <text x="0" y="468" font-size="20" font-family="Inter, Arial, sans-serif" fill="#eafffb">Statistical modeling · Country-level features</text>
+  </g>
 </svg>
