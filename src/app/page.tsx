@@ -143,9 +143,47 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Clean Hero Section */}
-      <section className="relative pt-20 pb-24 flex flex-col items-center justify-center bg-gradient-to-b from-white to-emerald-50 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-800 to-teal-700">
+      <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between text-white">
+        <div className="text-lg font-semibold">Daniel Chacón Pérez</div>
+        <div className="flex items-center gap-4">
+          <a href="#about" className="text-white/90 hover:text-white">About</a>
+          <a href="#projects" className="text-white/90 hover:text-white">Projects</a>
+          <a href="#videos" className="text-white/90 hover:text-white">Videos</a>
+          <a href="mailto:danielcp.26@hotmail.com" className="px-4 py-2 bg-white/10 rounded-lg text-white hover:bg-white/20">Contact</a>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="relative pt-12 pb-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-white">
+            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">Daniel Chacón Pérez</h1>
+            <p className="mt-4 text-xl md:text-2xl text-white/90">Data Scientist • Analyst • Machine Learning & BI</p>
+
+            <p className="mt-6 text-gray-100 max-w-xl">I build end-to-end data solutions — from scraping and feature engineering to model deployment and stakeholder-ready dashboards.</p>
+
+            <div className="mt-8 flex items-center gap-4">
+              <a href="#projects" className="inline-flex items-center px-6 py-3 bg-white text-slate-900 rounded-full font-medium hover:shadow-lg">See Projects</a>
+              <a href="https://github.com/danielcp26" target="_blank" rel="noopener noreferrer" className="px-5 py-3 border border-white/20 rounded-full text-white hover:bg-white/10">GitHub</a>
+            </div>
+          </div>
+
+          <div className="relative flex justify-center md:justify-end">
+            <div className="w-80 h-80 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
+              <img src="/projects/project-1.svg" alt="profile visual" className="w-full h-full object-cover" />
+            </div>
+
+            {/* Decorative blob */}
+            <svg className="absolute -right-10 -top-10 w-64 h-64 opacity-30 animate-spin-slow" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stopColor="#34d399" /><stop offset="1" stopColor="#06b6d4" /></linearGradient>
+              </defs>
+              <path fill="url(#bg)" d="M43.6,-66.7C57.4,-56.3,72.6,-48.6,80,-36.1C87.5,-23.5,87.1,-6.3,82.3,9.6C77.6,25.6,68.5,40.8,55.6,50.7C42.8,60.6,26.2,65.1,8.4,68.4C-9.4,71.7,-29.8,73.9,-45.7,67.9C-61.7,62,-73.2,47.9,-76.6,33.5C-79.9,19,-75.2,4.2,-69.3,-10.6C-63.3,-25.5,-56.2,-40.5,-43,-51.2C-29.8,-62,-14.9,-68.5,-0.8,-67.6C13.3,-66.8,26.6,-58.4,43.6,-66.7Z" transform="translate(100 100)"/>
+            </svg>
+          </div>
+        </div>
+      </section>
         {/* Science-themed Animated Background Elements */}
         <div className="absolute inset-0">
           {/* Floating molecular structures */}
@@ -361,32 +399,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white">
+      {/* Projects Section (glass cards) */}
+      <section id="projects" className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Selected Projects</h2>
-            <p className="text-sm text-gray-500">Interactive filters available — click tags to filter</p>
+            <h2 className="text-3xl font-bold text-white">Selected Projects</h2>
+            <p className="text-sm text-white/80">Click tags to filter projects</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <article key={project.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
+              <article key={project.id} className="rounded-2xl glass overflow-hidden transform transition-transform hover:-translate-y-3">
                 <div className="relative">
-                  <img src={project.image} alt={project.title} className="w-full h-44 md:h-56 object-cover" />
-                  <div className="absolute left-4 top-4 px-3 py-1 bg-emerald-600 text-white rounded-full text-xs">{project.tools[0]}</div>
+                  <img src={project.image} alt={project.title} className="w-full h-56 object-cover" />
+                  <div className="absolute left-4 top-4 px-3 py-1 bg-white/10 text-white rounded-full text-xs">{project.tools[0]}</div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{project.description}</p>
+                <div className="p-6 text-white">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-sm text-white/80 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tools.map((t) => (
-                      <button key={t} onClick={() => toggleTool(t)} className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-700">{t}</button>
+                      <button key={t} onClick={() => toggleTool(t)} className="text-xs px-2 py-1 rounded-full bg-white/10 text-white">{t}</button>
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {project.links.map((link, i) => (
-                      <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-2 bg-emerald-600 text-white rounded-lg hover:opacity-95">{link.text}</a>
+                      <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-2 bg-white text-slate-900 rounded-lg">{link.text}</a>
                     ))}
                   </div>
                 </div>

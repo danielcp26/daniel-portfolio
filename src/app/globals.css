@@ -66,6 +66,15 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Glass card helper */
+  .glass {
+    background: rgba(255,255,255,0.04);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  }
 }
 
 @keyframes spin-slow {
