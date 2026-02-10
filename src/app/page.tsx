@@ -1,407 +1,230 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { CheckIcon } from '@heroicons/react/24/solid';
-
-// Project data with tool tags
-const projects = [
-  {
-    id: 1,
-    title: "CRautos Price Prediction & Market Dashboard (Costa Rica)",
-    description: "End-to-end project: Selenium scraping, cleaning, feature engineering and regression models to predict used car prices and visualize market trends.",
-    image: "/projects/project-1.jpg",
-    tools: ["Python", "Machine Learning", "Data Analysis", "Interactive Dashboard"],
-    links: [
-      { text: "Python + ML", url: "https://github.com/danielcp26/ML_Projects/blob/main/CRautos%20Prediction.ipynb" },
-      { text: "Interactive Dashboard", url: "https://github.com/danielcp26/ML_Projects/blob/main/CrAutos%20Analysis.pdf" }
-    ]
-  },
-  {
-    id: 2,
-    title: "RAG Medical Assistant",
-    description: "A Retrieval-Augmented Generation chatbot for medical Q&A, built with Python and deployed on Azure ML.",
-    image: "/projects/project-2.jpg",
-    tools: ["Python", "Azure ML", "Machine Learning", "Data Analysis"],
-    links: [
-      { text: "View Notebook", url: "https://github.com/danielcp26/MedicalAssistantBot/blob/main/MedicalAssistantProject.ipynb" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Used Cars Price Prediction",
-    description: "EDA, feature engineering and regression modeling to estimate used car prices using scikit-learn and interpretable features.",
-    image: "/projects/project-3.jpg",
-    tools: ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
-    links: [
-      { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Used%20Cars%20Prediction.ipynb" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Olympic Medals Prediction",
-    description: "Modeling and predicting country medal counts using socio-economic features and regression techniques.",
-    image: "/projects/project-4.jpg",
-    tools: ["Python", "Machine Learning", "Data Analysis"],
-    links: [
-      { text: "View Project", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Olympic_medals.ipynb" }
-    ]
-  },
-  {
-    id: 5,
-    title: "Remote Work Data Analysis",
-    description: "EDA and dashboards studying remote vs onsite work impacts, employee well-being, and trends visualization.",
-    image: "/projects/project-5.jpg",
-    tools: ["Python", "Tableau", "Data Analysis"],
-    links: [
-      { text: "Python Analysis", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Remote_Work.ipynb" },
-      { text: "Tableau Dashboard", url: "https://public.tableau.com/app/profile/daniel.chac.n.p.rez/viz/Capstone_Internship/Dashboard1?publish=yes" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Boston House Price Prediction",
-    description: "Comparative regression study on the Boston housing dataset, evaluating regularization and model performance.",
-    image: "/projects/project-6.jpg",
-    tools: ["Python", "Machine Learning", "Scikit-learn"],
-    links: [
-      { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Regression%20Project%20Boston%20House%20Price%20Prediction.ipynb" }
-    ]
-  },
-  {
-    id: 7,
-    title: "COVID-19 Data Analysis (SQL)",
-    description: "Advanced PostgreSQL queries, window functions and views applied to COVID-19 datasets for trend analysis.",
-    image: "/projects/project-7.jpg",
-    tools: ["SQL", "PostgreSQL", "Data Analysis"],
-    links: [
-      { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/CovidProjectSQL.sql" }
-    ]
-  },
-  {
-    id: 8,
-    title: "Iris Flower Classification",
-    description: "Baseline classifiers (LR/KNN/Tree/SVM) with hyperparameter tuning applied to the iris dataset.",
-    image: "/projects/project-8.jpg",
-    tools: ["Python", "Machine Learning", "Scikit-learn"],
-    links: [
-      { text: "View Project", url: "https://github.com/danielcp26/ML_Projects/blob/main/Iris.ipynb" }
-    ]
-  },
-  {
-    id: 9,
-    title: "British Airways Review Dashboard",
-    description: "Customer satisfaction analysis and an interactive Tableau dashboard for airline service quality insights.",
-    image: "/projects/project-9.jpg",
-    tools: ["Tableau", "Data Analysis"],
-    links: [
-      { text: "View Dashboard", url: "https://public.tableau.com/app/profile/daniel.chac.n.p.rez/viz/BritishAirwaysReview_17443423700870/Dashboard1?publish=yes" }
-    ]
-  },
-  {
-    id: 10,
-    title: "Nashville Housing Data Cleaning",
-    description: "SQL-driven data cleaning using SPLIT_PART, CASE and window functions to standardize housing datasets.",
-    image: "/projects/project-10.jpg",
-    tools: ["SQL", "Data Analysis"],
-    links: [
-      { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/Nashville_Housing.sql" }
-    ]
-  }
-];
-
-// Available tools for filtering
-const availableTools = ["Python", "Machine Learning", "Data Analysis", "SQL", "PostgreSQL", "Tableau", "Power BI", "Azure ML", "Pandas", "Scikit-learn", "Interactive Dashboard"];
-
 export default function Home() {
-  const [selectedTools, setSelectedTools] = useState<string[]>([]);
-  const [filteredProjects, setFilteredProjects] = useState(projects);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [activeTool, setActiveTool] = useState<string | null>(null);
-  // Map tools to demo GIFs or images (files in public/projects)
-  const toolDemos: Record<string, string> = {
-    'Python': '/projects/vsGIF.gif',
-    'SQL': '/projects/SQLgif.gif',
-    'Power BI': '/projects/PBIgif.gif',
-    'Tableau': '/projects/tableauGIF.gif'
-  };
-
-  // Filter projects based on selected tools
-  useEffect(() => {
-    if (selectedTools.length === 0) {
-      setFilteredProjects(projects);
-    } else {
-      const filtered = projects.filter(project =>
-        selectedTools.some(tool => project.tools.includes(tool))
-      );
-      setFilteredProjects(filtered);
+  const selectedWork = [
+    {
+      id: 1,
+      title: "CRautos Price Prediction & Market Dashboard",
+      subtitle: "Machine Learning • Data Visualization",
+      company: "Portugal • 2024",
+      link: "https://github.com/danielcp26/ML_Projects/blob/main/CRautos%20Prediction.ipynb"
+    },
+    {
+      id: 2,
+      title: "RAG Medical Assistant",
+      subtitle: "Python • Azure ML • NLP",
+      company: "Remote • 2024",
+      link: "https://github.com/danielcp26/MedicalAssistantBot/blob/main/MedicalAssistantProject.ipynb"
+    },
+    {
+      id: 3,
+      title: "COVID-19 Data Analysis",
+      subtitle: "SQL • PostgreSQL • Analytics",
+      company: "Remote • 2023",
+      link: "https://github.com/danielcp26/SQL_Projects/blob/main/CovidProjectSQL.sql"
     }
-  }, [selectedTools]);
+  ];
 
-  const toggleTool = (tool: string) => {
-    setSelectedTools(prev =>
-      prev.includes(tool)
-        ? prev.filter(t => t !== tool)
-        : [...prev, tool]
-    );
-  };
-
-  const clearFilters = () => {
-    setSelectedTools([]);
-  };
+  const experience = [
+    {
+      id: 1,
+      title: "Data Scientist",
+      company: "Freelance",
+      period: "2023 - Current",
+      location: "Remote"
+    },
+    {
+      id: 2,
+      title: "Machine Learning Analyst",
+      company: "Various Projects",
+      period: "2022 - 2023",
+      location: "Portugal"
+    },
+    {
+      id: 3,
+      title: "Data Analyst Intern",
+      company: "Oeson Internship",
+      period: "2022",
+      location: "Remote"
+    },
+    {
+      id: 4,
+      title: "Industrial Engineer",
+      company: "MIT Data Science",
+      period: "2021 - 2022",
+      location: "Remote"
+    },
+    {
+      id: 5,
+      title: "Analytics & BI Developer",
+      company: "Self-Taught",
+      period: "2020 - Current",
+      location: "Global"
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-800 to-teal-700">
-      <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between text-white">
-        <div className="text-lg font-semibold">Daniel Chacón Pérez</div>
-        <div className="flex items-center gap-4">
-          <a href="#about" className="text-white/90 hover:text-white">About</a>
-          <a href="#projects" className="text-white/90 hover:text-white">Projects</a>
-          <a href="#videos" className="text-white/90 hover:text-white">Videos</a>
-          <a href="mailto:danielcp.26@hotmail.com" className="px-4 py-2 bg-white/10 rounded-lg text-white hover:bg-white/20">Contact</a>
-        </div>
-      </nav>
-
-      {/* Hero */}
-      <section className="relative pt-12 pb-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="text-white">
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">Daniel Chacón Pérez</h1>
-            <p className="mt-4 text-xl md:text-2xl text-white/90">Data Scientist • Analyst • Machine Learning & BI</p>
-
-            <p className="mt-6 text-gray-100 max-w-xl">I build end-to-end data solutions — from scraping and feature engineering to model deployment and stakeholder-ready dashboards.</p>
-
-            <div className="mt-8 flex items-center gap-4">
-              <a href="#projects" className="inline-flex items-center px-6 py-3 bg-white text-slate-900 rounded-full font-medium hover:shadow-lg">See Projects</a>
-              <a href="https://github.com/danielcp26" target="_blank" rel="noopener noreferrer" className="px-5 py-3 border border-white/20 rounded-full text-white hover:bg-white/10">GitHub</a>
-            </div>
+    <div className="min-h-screen bg-white text-black">
+      {/* Header Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/5">
+        <nav className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="#" className="text-lg font-semibold">D.C</a>
+          <div className="flex gap-8 text-sm">
+            <a href="#work" className="hover:opacity-50 transition">Work</a>
+            <a href="#about" className="hover:opacity-50 transition">About</a>
+            <a href="#contact" className="hover:opacity-50 transition">Contact</a>
           </div>
+        </nav>
+      </header>
 
-          <div className="relative flex justify-center md:justify-end">
-            <div className="w-80 h-80 rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
-              <img src="/projects/project-1.svg" alt="profile visual" className="w-full h-full object-cover" />
-            </div>
-
-            {/* Decorative blob */}
-            <svg className="absolute -right-10 -top-10 w-64 h-64 opacity-30 animate-spin-slow" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stopColor="#34d399" /><stop offset="1" stopColor="#06b6d4" /></linearGradient>
-              </defs>
-              <path fill="url(#bg)" d="M43.6,-66.7C57.4,-56.3,72.6,-48.6,80,-36.1C87.5,-23.5,87.1,-6.3,82.3,9.6C77.6,25.6,68.5,40.8,55.6,50.7C42.8,60.6,26.2,65.1,8.4,68.4C-9.4,71.7,-29.8,73.9,-45.7,67.9C-61.7,62,-73.2,47.9,-76.6,33.5C-79.9,19,-75.2,4.2,-69.3,-10.6C-63.3,-25.5,-56.2,-40.5,-43,-51.2C-29.8,-62,-14.9,-68.5,-0.8,-67.6C13.3,-66.8,26.6,-58.4,43.6,-66.7Z" transform="translate(100 100)"/>
-            </svg>
-          </div>
-        </div>
-        {/* Science-themed Animated Background Elements */}
-        <div className="absolute inset-0">
-          {/* Floating molecular structures */}
-          <div className="absolute top-20 left-20 w-4 h-4 bg-emerald-400/30 rounded-full animate-pulse">
-            <div className="absolute top-8 left-8 w-3 h-3 bg-emerald-300/40 rounded-full"></div>
-            <div className="absolute -top-2 left-6 w-2 h-2 bg-emerald-500/35 rounded-full"></div>
-          </div>
-
-          {/* DNA-like helix structure */}
-          <div className="absolute top-1/4 right-1/4 animate-spin-slow">
-            <div className="relative w-16 h-32">
-              <div className="absolute top-0 left-0 w-2 h-2 bg-green-400/40 rounded-full"></div>
-              <div className="absolute top-4 right-0 w-2 h-2 bg-green-300/40 rounded-full"></div>
-              <div className="absolute top-8 left-0 w-2 h-2 bg-green-500/40 rounded-full"></div>
-              <div className="absolute top-12 right-0 w-2 h-2 bg-green-400/40 rounded-full"></div>
-              <div className="absolute top-16 left-0 w-2 h-2 bg-green-300/40 rounded-full"></div>
-              <div className="absolute top-20 right-0 w-2 h-2 bg-green-500/40 rounded-full"></div>
-              <div className="absolute top-24 left-0 w-2 h-2 bg-green-400/40 rounded-full"></div>
-              <div className="absolute top-28 right-0 w-2 h-2 bg-green-300/40 rounded-full"></div>
-            </div>
-          </div>
-
-          {/* Network connections */}
-          <div className="absolute bottom-1/3 left-1/4">
-            <div className="relative w-24 h-24 animate-pulse">
-              <div className="absolute top-0 left-1/2 w-3 h-3 bg-emerald-400/30 rounded-full"></div>
-              <div className="absolute bottom-0 left-0 w-3 h-3 bg-emerald-300/30 rounded-full"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500/30 rounded-full"></div>
-              <div className="absolute top-1/2 right-0 w-3 h-3 bg-emerald-400/30 rounded-full"></div>
-              {/* Connection lines */}
-              <div className="absolute top-2 left-1/2 w-px h-8 bg-emerald-400/20 rotate-45"></div>
-              <div className="absolute top-2 left-1/2 w-px h-8 bg-emerald-400/20 -rotate-45"></div>
-              <div className="absolute bottom-2 left-2 w-8 h-px bg-emerald-400/20"></div>
-            </div>
-          </div>
-
-          {/* Floating geometric shapes */}
-          <div className="absolute top-1/3 left-1/3 w-6 h-6 border border-emerald-400/20 rotate-45 animate-spin-slow"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-8 h-8 border border-green-400/25 rounded-full animate-pulse"></div>
-
-          {/* Data visualization elements */}
-          <div className="absolute top-3/4 right-1/4">
-            <div className="flex items-end space-x-1 animate-pulse">
-              <div className="w-1 h-4 bg-emerald-400/30"></div>
-              <div className="w-1 h-6 bg-emerald-300/30"></div>
-              <div className="w-1 h-3 bg-emerald-500/30"></div>
-              <div className="w-1 h-8 bg-emerald-400/30"></div>
-              <div className="w-1 h-5 bg-emerald-300/30"></div>
-            </div>
-          </div>
-
-          {/* Subtle grid pattern */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 opacity-10">
-            <div className="grid grid-cols-8 grid-rows-8 w-full h-full">
-              {[...Array(64)].map((_, i) => (
-                <div key={i} className="border border-emerald-400/30 animate-pulse" style={{animationDelay: `${i * 0.1}s`}}></div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Profile Image - Better Centered */}
-        <div className="relative z-10 mb-8 flex flex-col items-center">
-          <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-emerald-100 shadow-xl">
-            <img
-              src="https://ext.same-assets.com/433100065/550191876.jpeg"
-              alt="Daniel Chacón Pérez"
-              className="w-full h-full object-cover object-top"
-              style={{ objectPosition: 'center 15%' }}
-            />
-          </div>
-          <div className="text-center mt-6">
-            <h1 className="text-4xl md:text-5xl font-semibold text-gray-900">Daniel Chacón Pérez</h1>
-            <p className="mt-2 text-lg text-gray-600">Data Scientist · Analyst · ML Enthusiast</p>
-          </div>
-          <div className="flex items-center gap-3 mt-6">
-            <a href="mailto:danielcp.26@hotmail.com" className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:opacity-95">Email</a>
-            <a href="https://github.com/danielcp26" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">GitHub</a>
-            <a href="https://www.linkedin.com/in/daniel-chacon-perez/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50">LinkedIn</a>
-          </div>
-        </div>
-
-        <a href="#about" className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-          <ChevronDownIcon className="w-6 h-6" />
-        </a>
-      </section>
-
-      {/* Videos section removed per request */}
-
-      {/* Tools Demo Section */}
-      <section id="tools" className="py-12 bg-white/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">Tools Spotlight</h2>
-            <p className="text-sm text-gray-600">Click a tool to preview a demo</p>
-          </div>
-
-          <div className="flex flex-wrap gap-3 mb-6">
-            {Object.keys(toolDemos).map((tool) => (
-              <button
-                key={tool}
-                onClick={() => setActiveTool(tool)}
-                className={`px-3 py-2 rounded-full text-sm font-medium ${activeTool === tool ? 'bg-emerald-600 text-white' : 'bg-white/10 text-white'}`}
-              >
-                {tool}
-              </button>
-            ))}
-          </div>
-
-          <div className="rounded-2xl overflow-hidden bg-black p-4 flex items-center justify-center" style={{minHeight: 220}}>
-            {activeTool ? (
-              <img src={toolDemos[activeTool]} alt={activeTool} className="max-h-72 object-contain" />
-            ) : (
-              <p className="text-gray-300">Select a tool to preview its demo.</p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section with Modern HD Icons */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              I'm a data scientist and analyst who turns noisy datasets into decisions that move the business. I build end-to-end solutions—from data cleaning and feature engineering to predictive models and dashboards—using Python, SQL, and Tableau/Power BI. Trained as an industrial engineer, I focus on customer analytics, demand forecasting, and interpretable ML that stakeholders can trust.
+      {/* Hero Section */}
+      <section className="pt-32 pb-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-12">
+            <p className="text-sm tracking-wider uppercase mb-6 opacity-60">Hey there</p>
+            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-8">
+              I'm Daniel<br />
+              Chacón Pérez.
+            </h1>
+            <p className="text-lg md:text-xl leading-relaxed max-w-2xl opacity-80">
+              Data scientist & analyst building end-to-end solutions from data collection to stakeholder-ready insights. I turn messy datasets into decisions that move the business.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Analyzing Section - Modern Chart Icon */}
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100 hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-semibold mb-6 text-gray-800">Analyzing</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Experienced in customer analytics, demand forecasting, and predictive modeling. I love extracting actionable business insights from complex datasets and building models for churn propensity and segmentation.
-              </p>
+          {/* Profile Image */}
+          <div className="mb-16">
+            <div className="w-40 h-40 rounded-full overflow-hidden bg-gray-200">
+              <img
+                src="/projects/Profile%20Picture.jpg"
+                alt="Daniel Chacón Pérez"
+                className="w-full h-full object-cover"
+              />
             </div>
+          </div>
 
-            {/* Developing Section - Modern Code Icon */}
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-gray-50 to-slate-50 border border-gray-100 hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gray-700 to-slate-800 rounded-xl flex items-center justify-center">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-semibold mb-6 text-gray-800">Developing</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Proficient in Python (pandas, NumPy, scikit-learn), SQL (PostgreSQL/MySQL), and comfortable with Git and Excel. I build end-to-end machine learning pipelines from data cleaning to model deployment.
-              </p>
-            </div>
-
-            {/* Visualizing Section - Modern Dashboard Icon */}
-            <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-100 hover:shadow-lg transition-all duration-300">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-semibold mb-6 text-gray-800">Visualizing</h2>
-              <p className="text-gray-600 leading-relaxed">
-                Proficient using BI tools (Power BI, Tableau) for creating dashboards that stakeholders actually use. I communicate insights effectively through notebooks and interactive visualizations.
-              </p>
-            </div>
+          {/* Quick Links */}
+          <div className="flex gap-6 flex-wrap">
+            <a href="#work" className="text-sm font-medium hover:opacity-50 transition">View Work</a>
+            <a href="https://github.com/danielcp26" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:opacity-50 transition">Github</a>
+            <a href="https://www.linkedin.com/in/daniel-chacon-perez/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:opacity-50 transition">LinkedIn</a>
           </div>
         </div>
       </section>
 
-      {/* Projects Section (glass cards) */}
-      <section id="projects" className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-white">Selected Projects</h2>
-            <p className="text-sm text-white/80">Click tags to filter projects</p>
+      {/* Selected Work Section */}
+      <section id="work" className="py-24 px-6 border-t border-black/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold">Selected work</h2>
+            <p className="text-sm opacity-60 mt-2">({selectedWork.length})</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <article key={project.id} className="rounded-2xl glass overflow-hidden transform transition-transform hover:-translate-y-3">
-                <div className="relative">
-                  <img src={project.image} alt={project.title} className="w-full h-56 object-cover" />
-                  <div className="absolute left-4 top-4 px-3 py-1 bg-white/10 text-white rounded-full text-xs">{project.tools[0]}</div>
-                </div>
-                <div className="p-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-sm text-white/80 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tools.map((t) => (
-                      <button key={t} onClick={() => toggleTool(t)} className="text-xs px-2 py-1 rounded-full bg-white/10 text-white">{t}</button>
-                    ))}
+          <div className="space-y-12">
+            {selectedWork.map((work) => (
+              <a
+                key={work.id}
+                href={work.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-4 pb-8 border-b border-black/5 hover:opacity-60 transition">
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2 group-hover:underline">{work.title}</h3>
+                    <p className="text-sm opacity-70 mb-3">{work.subtitle}</p>
+                    <p className="text-xs opacity-50">{work.company}</p>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {project.links.map((link, i) => (
-                      <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="text-sm px-3 py-2 bg-white text-slate-900 rounded-lg">{link.text}</a>
-                    ))}
-                  </div>
+                  <div className="text-xs opacity-50 whitespace-nowrap">View →</div>
                 </div>
-              </article>
+              </a>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <a href="https://github.com/danielcp26" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:opacity-50 transition">
+              See all work →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="about" className="py-24 px-6 border-t border-black/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold">Worked with</h2>
+            <p className="text-sm opacity-60 mt-2">({experience.length})</p>
+          </div>
+
+          <div className="space-y-8">
+            {experience.map((exp) => (
+              <div key={exp.id} className="border-b border-black/5 pb-8">
+                <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold mb-1">{exp.title}</h3>
+                    <p className="text-sm opacity-70">{exp.company}</p>
+                  </div>
+                  <div className="flex flex-col md:text-right text-xs opacity-60">
+                    <span>{exp.period}</span>
+                    <span>{exp.location}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About / Contact Section */}
+      <section id="contact" className="py-24 px-6 border-t border-black/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-6">About</h3>
+              <p className="text-sm leading-relaxed opacity-80">
+                I'm passionate about turning complex data into actionable insights. Trained as an industrial engineer, I specialize in end-to-end ML pipelines, customer analytics, and building dashboards that stakeholders trust.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-6">Skills</h3>
+              <ul className="text-sm space-y-2 opacity-80">
+                <li>Python • Pandas • NumPy</li>
+                <li>SQL • PostgreSQL • MySQL</li>
+                <li>Machine Learning • Scikit-learn</li>
+                <li>Tableau • Power BI</li>
+                <li>Data Visualization • Analytics</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-6">Connect</h3>
+              <div className="space-y-3 text-sm">
+                <a href="https://www.linkedin.com/in/daniel-chacon-perez/" target="_blank" rel="noopener noreferrer" className="block hover:opacity-50 transition">
+                  LinkedIn
+                </a>
+                <a href="https://github.com/danielcp26" target="_blank" rel="noopener noreferrer" className="block hover:opacity-50 transition">
+                  GitHub
+                </a>
+                <a href="mailto:danielcp.26@hotmail.com" className="block hover:opacity-50 transition">
+                  Email
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-green-900 via-emerald-800 to-teal-700 text-white py-8">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="mb-2">© Daniel Chacón Pérez 2026</p>
-          <p className="text-sm opacity-75">Built with Next.js and Tailwind CSS</p>
+      <footer className="py-12 px-6 border-t border-black/5 text-center text-xs opacity-60">
+        <div className="max-w-4xl mx-auto">
+          <p>© D.C - 2026</p>
+          <p className="mt-4">
+            Say hello at{' '}
+            <a href="mailto:danielcp.26@hotmail.com" className="hover:opacity-50 transition">
+              danielcp.26@hotmail.com
+            </a>
+          </p>
         </div>
       </footer>
     </div>
