@@ -10,7 +10,7 @@ const projects = [
     id: 1,
     title: "CRautos Price Prediction & Market Dashboard (Costa Rica)",
     description: "End-to-end project: Selenium scraping, cleaning, feature engineering and regression models to predict used car prices and visualize market trends.",
-    image: "https://source.unsplash.com/1200x800/?used-car,car,automotive",
+    image: "/projects/project-1.svg",
     tools: ["Python", "Machine Learning", "Data Analysis", "Interactive Dashboard"],
     links: [
       { text: "Python + ML", url: "https://github.com/danielcp26/ML_Projects/blob/main/CRautos%20Prediction.ipynb" },
@@ -21,7 +21,7 @@ const projects = [
     id: 2,
     title: "RAG Medical Assistant",
     description: "A Retrieval-Augmented Generation chatbot for medical Q&A, built with Python and deployed on Azure ML.",
-    image: "https://source.unsplash.com/1200x800/?medical,ai,healthcare",
+    image: "/projects/project-2.svg",
     tools: ["Python", "Azure ML", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Notebook", url: "https://github.com/danielcp26/MedicalAssistantBot/blob/main/MedicalAssistantProject.ipynb" }
@@ -31,7 +31,7 @@ const projects = [
     id: 3,
     title: "Used Cars Price Prediction",
     description: "EDA, feature engineering and regression modeling to estimate used car prices using scikit-learn and interpretable features.",
-    image: "https://source.unsplash.com/1200x800/?car,analytics,pricing",
+    image: "/projects/project-3.svg",
     tools: ["Python", "Machine Learning", "Pandas", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Used%20Cars%20Prediction.ipynb" }
@@ -41,7 +41,7 @@ const projects = [
     id: 4,
     title: "Olympic Medals Prediction",
     description: "Modeling and predicting country medal counts using socio-economic features and regression techniques.",
-    image: "https://source.unsplash.com/1200x800/?olympics,medal,sports",
+    image: "/projects/project-4.svg",
     tools: ["Python", "Machine Learning", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Olympic_medals.ipynb" }
@@ -51,7 +51,7 @@ const projects = [
     id: 5,
     title: "Remote Work Data Analysis",
     description: "EDA and dashboards studying remote vs onsite work impacts, employee well-being, and trends visualization.",
-    image: "https://source.unsplash.com/1200x800/?remote-work,home-office,workspace",
+    image: "/projects/project-5.svg",
     tools: ["Python", "Tableau", "Data Analysis"],
     links: [
       { text: "Python Analysis", url: "https://github.com/danielcp26/Oeson_Internship/blob/main/Remote_Work.ipynb" },
@@ -62,7 +62,7 @@ const projects = [
     id: 6,
     title: "Boston House Price Prediction",
     description: "Comparative regression study on the Boston housing dataset, evaluating regularization and model performance.",
-    image: "https://source.unsplash.com/1200x800/?house,real-estate,home",
+    image: "/projects/project-6.svg",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Regression%20Project%20Boston%20House%20Price%20Prediction.ipynb" }
@@ -72,7 +72,7 @@ const projects = [
     id: 7,
     title: "COVID-19 Data Analysis (SQL)",
     description: "Advanced PostgreSQL queries, window functions and views applied to COVID-19 datasets for trend analysis.",
-    image: "https://source.unsplash.com/1200x800/?covid,data,virus,health",
+    image: "/projects/project-7.svg",
     tools: ["SQL", "PostgreSQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/CovidProjectSQL.sql" }
@@ -82,7 +82,7 @@ const projects = [
     id: 8,
     title: "Iris Flower Classification",
     description: "Baseline classifiers (LR/KNN/Tree/SVM) with hyperparameter tuning applied to the iris dataset.",
-    image: "https://source.unsplash.com/1200x800/?iris,flower,bloom",
+    image: "/projects/project-8.svg",
     tools: ["Python", "Machine Learning", "Scikit-learn"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/ML_Projects/blob/main/Iris.ipynb" }
@@ -92,7 +92,7 @@ const projects = [
     id: 9,
     title: "British Airways Review Dashboard",
     description: "Customer satisfaction analysis and an interactive Tableau dashboard for airline service quality insights.",
-    image: "https://source.unsplash.com/1200x800/?airplane,airport,airline",
+    image: "/projects/project-9.svg",
     tools: ["Tableau", "Data Analysis"],
     links: [
       { text: "View Dashboard", url: "https://public.tableau.com/app/profile/daniel.chac.n.p.rez/viz/BritishAirwaysReview_17443423700870/Dashboard1?publish=yes" }
@@ -102,7 +102,7 @@ const projects = [
     id: 10,
     title: "Nashville Housing Data Cleaning",
     description: "SQL-driven data cleaning using SPLIT_PART, CASE and window functions to standardize housing datasets.",
-    image: "https://source.unsplash.com/1200x800/?nashville,housing,real-estate",
+    image: "/projects/project-10.svg",
     tools: ["SQL", "Data Analysis"],
     links: [
       { text: "View Project", url: "https://github.com/danielcp26/SQL_Projects/blob/main/Nashville_Housing.sql" }
