@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -45,11 +44,10 @@ export default function WorkPage() {
                   <div className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition">
                     {/* Image */}
                     <div className="relative aspect-video overflow-hidden">
-                      <Image
+                      <img
                         src={project.image}
                         alt={project.title}
-                        fill
-                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                       />
                       {/* Overlay gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent opacity-60" />

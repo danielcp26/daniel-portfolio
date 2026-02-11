@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import { motion } from 'framer-motion';
@@ -88,12 +87,10 @@ export default function ProjectContent({
             transition={{ duration: 0.8, delay: 0.5 }}
             className="relative aspect-[16/9] rounded-3xl overflow-hidden bg-gradient-to-br from-[#8B7FFF]/10 to-transparent"
           >
-            <Image
+            <img
               src={project.image}
               alt={project.title}
-              fill
-              className="object-cover"
-              priority
+              className="absolute w-full h-full object-cover"
             />
           </motion.div>
         </div>
@@ -231,11 +228,10 @@ export default function ProjectContent({
                     className="group block"
                   >
                     <div className="relative aspect-video rounded-xl overflow-hidden bg-white/5 mb-4">
-                      <Image
+                      <img
                         src={related.image}
                         alt={related.title}
-                        fill
-                        className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                       />
                     </div>
                     <h3 className="text-xl font-light text-white group-hover:text-[#8B7FFF] transition mb-2">

@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SectionHeading from '@/components/SectionHeading';
@@ -120,11 +119,9 @@ export default function Home() {
                       <div className="relative w-[280px] md:w-[400px] lg:w-[500px]">
                         <div className="bg-[#2a2a2a] rounded-lg p-2 shadow-2xl">
                           <div className="bg-white rounded overflow-hidden aspect-[16/10]">
-                            <Image
+                            <img
                               src={project.image}
                               alt={project.title}
-                              width={500}
-                              height={312}
                               className="w-full h-full object-cover"
                             />
                           </div>
@@ -137,11 +134,9 @@ export default function Home() {
                       <div className="hidden md:block relative w-[200px] lg:w-[250px] -ml-20 mt-16">
                         <div className="bg-[#2a2a2a] rounded-xl p-2 shadow-2xl">
                           <div className="bg-white rounded overflow-hidden aspect-[4/3]">
-                            <Image
+                            <img
                               src={project.image}
                               alt={project.title}
-                              width={250}
-                              height={187}
                               className="w-full h-full object-cover"
                             />
                           </div>
@@ -228,12 +223,10 @@ export default function Home() {
           <ScrollReveal className="flex flex-col items-center text-center">
             {/* Circular Profile Image */}
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-10">
-              <Image
+              <img
                 src="/projects/Profile%20Picture.jpg"
                 alt={profile.name}
-                fill
-                priority
-                className="object-cover grayscale"
+                className="w-full h-full object-cover grayscale"
                 style={{ objectPosition: '50% 22%' }}
               />
             </div>

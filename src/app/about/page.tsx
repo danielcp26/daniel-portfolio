@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -95,12 +94,10 @@ export default function AboutPage() {
             {/* Right - Profile Image */}
             <ScrollReveal delay={0.2} className="lg:pt-16">
               <div className="relative aspect-square max-w-md mx-auto lg:mx-0 rounded-3xl overflow-hidden">
-                <Image
+                <img
                   src="/projects/Profile%20Picture.jpg"
                   alt={profile.name}
-                  fill
-                  priority
-                  className="object-cover grayscale"
+                  className="w-full h-full object-cover grayscale"
                   style={{ objectPosition: '50% 22%' }}
                 />
               </div>
