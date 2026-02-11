@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/daniel-portfolio',
   allowedDevOrigins: ["*.preview.same-app.com"],
   images: {
     unoptimized: true,

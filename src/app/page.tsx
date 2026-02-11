@@ -13,6 +13,7 @@ import { profile } from '@/content/profile';
 import { projects } from '@/content/projects';
 import { experience } from '@/content/experience';
 import { motion } from 'framer-motion';
+import { withBasePath } from '@/lib/basePath';
 
 export default function Home() {
 
@@ -224,7 +225,7 @@ export default function Home() {
             {/* Circular Profile Image */}
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-10">
               <img
-                src="/projects/Profile%20Picture.jpg"
+                src={withBasePath("/projects/Profile%20Picture.jpg")}
                 alt={profile.name}
                 className="w-full h-full object-cover grayscale"
                 style={{ objectPosition: '50% 22%' }}
