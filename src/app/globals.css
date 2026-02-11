@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables - Dark Theme */
+:root {
+  --bg: #0B0B0B;
+  --fg: #F2F2F2;
+  --muted: #A0A0A0;
+  --line: rgba(255, 255, 255, 0.12);
+  --card: #101010;
+  --accent: #8B7FFF;
+  --hero-bg: #F8F8F8;
+}
+
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -18,8 +30,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ffffff;
-  color: #000000;
+  background: var(--bg);
+  color: var(--fg);
+  font-weight: 300;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 a {
@@ -33,6 +57,24 @@ img {
   display: block;
 }
 
-.transition {
-  transition: all 0.3s ease;
+/* Smooth transitions */
+button,
+a {
+  transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Link hover states */
+a:hover {
+  opacity: 0.6;
+}
+
+/* Selection colors */
+::selection {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: inherit;
 }
