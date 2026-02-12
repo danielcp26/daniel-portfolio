@@ -85,9 +85,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Selected Work Section */}
-      <section id="work" className="py-24 px-6 bg-[#F8F8F8]">
-        <div className="max-w-6xl mx-auto">
+      {/* Selected Work Section (mirrors Work page design) */}
+      <section id="work" className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
           <ScrollReveal>
             <div className="mb-16">
               <p className="text-xs tracking-[0.2em] uppercase text-black/40 mb-4">
@@ -99,89 +99,69 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="space-y-32">
-            {projects.slice(0, 3).map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="relative"
-              >
-                {/* Large background text */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                  <span className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-bold text-black/[0.03] uppercase whitespace-nowrap tracking-tighter select-none">
-                    {project.title.split(" ")[0]}
-                  </span>
+          {projects.slice(0, 3).map((project, i) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="relative mb-24"
+            >
+              {/* Faint background text repeating first word */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+                <div className="flex gap-24 opacity-[0.06]">
+                  {Array.from({ length: 4 }).map((_, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
+                    >
+                      {project.title.split(" ")[0]}
+                    </span>
+                  ))}
                 </div>
+              </div>
 
-                <Link
-                  href={`/work/${project.slug}`}
-                  className="group block relative z-10"
-                >
-                  {/* Device mockup card */}
-                  <div className="bg-[#1a1a1a] rounded-3xl p-6 md:p-10 overflow-hidden">
-                    {/* Decorative gradient */}
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-purple-900/20 to-transparent rounded-3xl pointer-events-none" />
-
-                    {/* Device frames container */}
-                    <div className="relative flex items-center justify-center gap-4 py-8">
-                      {/* Laptop mockup */}
-                      <div className="relative w-[280px] md:w-[400px] lg:w-[500px]">
-                        <div className="bg-[#2a2a2a] rounded-lg p-2 shadow-2xl">
-                          <div className="bg-white rounded overflow-hidden aspect-[16/10]">
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        </div>
-                        {/* Laptop base */}
-                        <div className="h-3 bg-[#2a2a2a] rounded-b-xl mx-8 -mt-1" />
-                      </div>
-
-                      {/* Tablet mockup - offset */}
-                      <div className="hidden md:block relative w-[200px] lg:w-[250px] -ml-20 mt-16">
-                        <div className="bg-[#2a2a2a] rounded-xl p-2 shadow-2xl">
-                          <div className="bg-white rounded overflow-hidden aspect-[4/3]">
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Project info */}
-                    <div className="mt-6 pt-6 border-t border-white/10">
-                      <h3 className="text-xl md:text-2xl font-medium text-white mb-4 group-hover:text-[#8B7FFF] transition-colors">
-                        {project.title}
-                      </h3>
-                      <div className="flex gap-3 flex-wrap">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-xs border border-white/20 text-white/70 px-4 py-1.5 rounded-full"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+              <Link href={`/work/${project.slug}`} className="group block relative z-10">
+                {/* Centered framed image card */}
+                <div className="mx-auto w-full max-w-3xl rounded-2xl bg-black shadow-[0_20px_60px_rgba(0,0,0,0.25)] overflow-hidden">
+                  <div className="p-4">
+                    <div className="relative rounded-xl overflow-hidden border border-black/30 bg-[#111]">
+                      <div className="aspect-[16/9]">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                </div>
 
-          <ScrollReveal delay={0.3} className="mt-16 text-center">
+                {/* Title and tags */}
+                <div className="mx-auto max-w-3xl mt-6">
+                  <h3 className="text-xl md:text-2xl font-medium text-black mb-3 group-hover:text-[#5F54FF] transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-black/70"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+
+          <ScrollReveal delay={0.3} className="mt-2 text-center">
             <Link
               href="/work"
-              className="inline-block text-sm font-light text-black/60 hover:text-[#8B7FFF] transition"
+              className="inline-block text-sm font-light text-black/60 hover:text-[#5F54FF] transition"
             >
               View all projects →
             </Link>
