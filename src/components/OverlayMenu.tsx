@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { profile } from "@/content/profile";
 import WaveMesh from "./WaveMesh";
 import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 interface OverlayMenuProps {
   isOpen: boolean;
@@ -86,11 +87,12 @@ export default function OverlayMenu({ isOpen, onClose }: OverlayMenuProps) {
             <div className="hidden md:block w-1/3 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0B0B0B]/60 z-10" />
               <Image
-                src="https://source.unsplash.com/1200x1600/?costa%20rica,rainforest,nature,forest,trees"
+                src={withBasePath("/images/CR_Rainforest.webp")}
                 alt="Costa Rica rainforest"
                 fill
                 className="object-cover grayscale"
                 priority
+                sizes="(min-width: 768px) 33vw, 0vw"
               />
             </div>
 
