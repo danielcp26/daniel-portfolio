@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Daniel Chacón Pérez — Data Scientist",
-  description: "Data Scientist · Analyst · ML Enthusiast. Building end-to-end solutions from data cleaning to predictive models and dashboards using Python, SQL, and Tableau/Power BI.",
+  description:
+    "Data Scientist · Analyst · ML Enthusiast. Building end-to-end solutions from data cleaning to predictive models and dashboards using Python, SQL, and Tableau/Power BI.",
   icons: {
     icon: "/favicon.ico",
   },

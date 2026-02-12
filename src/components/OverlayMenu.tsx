@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
-import { useEffect } from 'react';
-import { profile } from '@/content/profile';
-import WaveMesh from './WaveMesh';
-import Image from 'next/image';
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useEffect } from "react";
+import { profile } from "@/content/profile";
+import WaveMesh from "./WaveMesh";
+import Image from "next/image";
 
 interface OverlayMenuProps {
   isOpen: boolean;
@@ -15,30 +15,30 @@ interface OverlayMenuProps {
 export default function OverlayMenu({ isOpen, onClose }: OverlayMenuProps) {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEsc);
+      document.addEventListener("keydown", handleEsc);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEsc);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEsc);
+      document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose]);
 
   const menuItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Work', href: '/#work' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: `mailto:${profile.email}` },
+    { label: "Home", href: "/" },
+    { label: "Work", href: "/#work" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: `mailto:${profile.email}` },
   ];
 
   const containerVariants = {
@@ -72,7 +72,7 @@ export default function OverlayMenu({ isOpen, onClose }: OverlayMenuProps) {
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="fixed inset-0 md:inset-8 bg-[#0B0B0B] z-50 overflow-hidden flex"
-            style={{ maxHeight: 'calc(100vh - 4rem)' }}
+            style={{ maxHeight: "calc(100vh - 4rem)" }}
           >
             {/* Close Button */}
             <button
@@ -136,14 +136,19 @@ export default function OverlayMenu({ isOpen, onClose }: OverlayMenuProps) {
                 </nav>
 
                 {/* Social Links */}
-                <motion.div variants={itemVariants} className="pt-8 border-t border-white/10">
-                  <p className="text-xs uppercase tracking-widest text-white/40 mb-4">Connect</p>
+                <motion.div
+                  variants={itemVariants}
+                  className="pt-8 border-t border-white/10"
+                >
+                  <p className="text-xs uppercase tracking-widest text-white/40 mb-4">
+                    Connect
+                  </p>
                   <div className="flex gap-6">
                     {profile.socials.map((social, i) => (
                       <a
                         key={i}
                         href={social.url}
-                        target={social.icon !== 'mail' ? '_blank' : undefined}
+                        target={social.icon !== "mail" ? "_blank" : undefined}
                         rel="noopener noreferrer"
                         className="text-sm text-white/60 hover:text-[#8B7FFF] transition"
                       >

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import ScrollReveal from '@/components/ScrollReveal';
-import { projects } from '@/content/projects';
-import { motion } from 'framer-motion';
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import { projects } from "@/content/projects";
+import { motion } from "framer-motion";
 
 export default function WorkPage() {
   return (
@@ -16,12 +16,15 @@ export default function WorkPage() {
       <section className="pt-32 pb-16 px-6 md:px-16">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <p className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">ALL PROJECTS</p>
+            <p className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">
+              ALL PROJECTS
+            </p>
             <h1 className="text-5xl md:text-7xl font-light leading-tight mb-6 text-white">
               Work ({projects.length})
             </h1>
             <p className="text-lg md:text-xl leading-relaxed max-w-2xl text-white/60">
-              A collection of projects spanning machine learning, data analysis, and data engineering.
+              A collection of projects spanning machine learning, data analysis,
+              and data engineering.
             </p>
           </ScrollReveal>
         </div>
@@ -52,7 +55,7 @@ export default function WorkPage() {
                       {/* Overlay gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent opacity-60" />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="p-6">
                       <h3 className="text-xl font-medium text-white mb-2 group-hover:text-[#8B7FFF] transition">

@@ -1,23 +1,32 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import ScrollReveal from '@/components/ScrollReveal';
-import { profile } from '@/content/profile';
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { withBasePath } from '@/lib/basePath';
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import { profile } from "@/content/profile";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { withBasePath } from "@/lib/basePath";
 
 function LiveClock() {
-  const [time, setTime] = useState<string>('');
-  
+  const [time, setTime] = useState<string>("");
+
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
       // Costa Rica time (UTC-6)
-      const costaRicaTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Costa_Rica' }));
-      setTime(costaRicaTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }));
+      const costaRicaTime = new Date(
+        now.toLocaleString("en-US", { timeZone: "America/Costa_Rica" }),
+      );
+      setTime(
+        costaRicaTime.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        }),
+      );
     };
     updateTime();
     const interval = setInterval(updateTime, 1000);
@@ -29,25 +38,74 @@ function LiveClock() {
 
 export default function AboutPage() {
   const tools = [
-    { name: 'Python', icon: '🐍' },
-    { name: 'Power BI', icon: '📊' },
-    { name: 'SQL', icon: '🗄️' },
-    { name: 'Tableau', icon: '📈' },
-    { name: 'Excel', icon: '📑' },
-    { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'VS Code', icon: '💻' },
+    {
+      name: "Python",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    },
+    {
+      name: "Power BI",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
+    },
+    {
+      name: "SQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg",
+    },
+    {
+      name: "Tableau",
+      icon: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg",
+    },
+    {
+      name: "Excel",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg",
+    },
+    {
+      name: "PostgreSQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    },
+    {
+      name: "VS Code",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    },
+    {
+      name: "Pandas",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+    },
+    {
+      name: "NumPy",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
+    },
+    {
+      name: "Git",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    },
+    {
+      name: "Jupyter",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg",
+    },
+    {
+      name: "Docker",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    },
+    {
+      name: "AWS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    },
+    {
+      name: "Azure",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+    },
   ];
 
   const services = [
-    'Data Analysis',
-    'Machine Learning',
-    'Dashboard Design',
-    'Data Visualization',
-    'ETL Pipelines',
-    'Statistical Modeling',
-    'Business Intelligence',
-    'Data Cleaning',
-    'Predictive Analytics',
+    "Data Analysis",
+    "Machine Learning",
+    "Dashboard Design",
+    "Data Visualization",
+    "ETL Pipelines",
+    "Statistical Modeling",
+    "Business Intelligence",
+    "Data Cleaning",
+    "Predictive Analytics",
   ];
 
   return (
@@ -68,8 +126,8 @@ export default function AboutPage() {
 
               <ScrollReveal delay={0.1}>
                 <div className="mb-10">
-                  <Link 
-                    href="/work" 
+                  <Link
+                    href="/work"
                     className="text-sm text-white/50 hover:text-[#8B7FFF] transition underline underline-offset-4"
                   >
                     Check out my work →
@@ -79,7 +137,9 @@ export default function AboutPage() {
 
               <ScrollReveal delay={0.2}>
                 <p className="text-white/60 text-lg leading-relaxed mb-12">
-                  Beyond my role, I experiment with data models, automation pipelines, emerging machine learning frameworks and web vibe coding.
+                  Beyond my role, I experiment with data models, automation
+                  pipelines, emerging machine learning frameworks and web vibe
+                  coding.
                 </p>
               </ScrollReveal>
 
@@ -99,7 +159,7 @@ export default function AboutPage() {
                   src={withBasePath("/projects/Profile%20Picture.jpg")}
                   alt={profile.name}
                   className="w-full h-full object-cover grayscale"
-                  style={{ objectPosition: '50% 22%' }}
+                  style={{ objectPosition: "50% 22%" }}
                 />
               </div>
             </ScrollReveal>
@@ -131,14 +191,16 @@ export default function AboutPage() {
               className="inline-flex items-center gap-3 bg-white/5 rounded-full px-5 py-3 hover:bg-white/10 transition group"
             >
               <span className="text-sm text-white/60">Let's connect</span>
-              <span className="text-[#8B7FFF] group-hover:translate-x-1 transition-transform">→</span>
+              <span className="text-[#8B7FFF] group-hover:translate-x-1 transition-transform">
+                →
+              </span>
             </a>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Tools I Love Section */}
-      <section className="py-16 px-6 md:px-16 border-t border-white/10">
+      <section className="py-16 px-6 md:px-16 border-t border-white/10 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="flex items-baseline gap-4 mb-10">
@@ -147,20 +209,64 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="flex flex-wrap gap-4">
-            {tools.map((tool, i) => (
+          {/* Infinite Scrolling Carousel */}
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[var(--bg)] to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[var(--bg)] to-transparent z-10" />
+
+            <div className="flex overflow-hidden">
               <motion.div
-                key={tool.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.05, duration: 0.3 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-3 bg-white/5 rounded-full px-5 py-3 border border-white/10 hover:border-white/20 transition"
+                className="flex gap-6 items-center"
+                animate={{
+                  x: [0, -1920],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 30,
+                    ease: "linear",
+                  },
+                }}
               >
-                <span className="text-xl">{tool.icon}</span>
-                <span className="text-sm text-white/70">{tool.name}</span>
+                {/* First set of tools */}
+                {tools.map((tool) => (
+                  <div
+                    key={`${tool.name}-1`}
+                    className="flex flex-col items-center gap-3 bg-white/5 rounded-2xl px-8 py-6 border border-white/10 hover:border-white/20 transition min-w-[140px] group cursor-default"
+                  >
+                    <div className="w-14 h-14 flex items-center justify-center">
+                      <img
+                        src={tool.icon}
+                        alt={tool.name}
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                      />
+                    </div>
+                    <span className="text-sm text-white/70 font-medium whitespace-nowrap">
+                      {tool.name}
+                    </span>
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {tools.map((tool) => (
+                  <div
+                    key={`${tool.name}-2`}
+                    className="flex flex-col items-center gap-3 bg-white/5 rounded-2xl px-8 py-6 border border-white/10 hover:border-white/20 transition min-w-[140px] group cursor-default"
+                  >
+                    <div className="w-14 h-14 flex items-center justify-center">
+                      <img
+                        src={tool.icon}
+                        alt={tool.name}
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                      />
+                    </div>
+                    <span className="text-sm text-white/70 font-medium whitespace-nowrap">
+                      {tool.name}
+                    </span>
+                  </div>
+                ))}
               </motion.div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -197,7 +303,9 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="flex items-baseline gap-4 mb-10">
-              <h2 className="text-2xl font-light text-white">Skills breakdown</h2>
+              <h2 className="text-2xl font-light text-white">
+                Skills breakdown
+              </h2>
             </div>
           </ScrollReveal>
 
@@ -249,7 +357,9 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="flex items-center gap-2 bg-white/5 rounded-full px-6 py-3 border border-white/10 hover:border-[#8B7FFF] hover:bg-[#8B7FFF]/10 transition group"
               >
-                <span className="text-sm text-white/70 group-hover:text-white transition">{social.name}</span>
+                <span className="text-sm text-white/70 group-hover:text-white transition">
+                  {social.name}
+                </span>
                 <span className="text-[#8B7FFF]">↗</span>
               </motion.a>
             ))}

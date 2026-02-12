@@ -1,8 +1,8 @@
-import { notFound } from 'next/navigation';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { projects } from '@/content/projects';
-import ProjectContent from './ProjectContent';
+import { notFound } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { projects } from "@/content/projects";
+import ProjectContent from "./ProjectContent";
 
 export function generateStaticParams() {
   return projects.map((project) => ({
@@ -10,7 +10,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ProjectPage({
+  params,
+}: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
 
@@ -18,7 +20,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
-  const relatedProjects = projects.filter((p) => p.id !== project.id).slice(0, 2);
+  const relatedProjects = projects
+    .filter((p) => p.id !== project.id)
+    .slice(0, 2);
 
   return (
     <div className="min-h-screen bg-[var(--bg)]">
@@ -28,4 +32,3 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     </div>
   );
 }
-

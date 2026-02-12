@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { useEffect, useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
   delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: "up" | "down" | "left" | "right";
   duration?: number;
   className?: string;
 }
@@ -14,9 +14,9 @@ interface ScrollRevealProps {
 export default function ScrollReveal({
   children,
   delay = 0,
-  direction = 'up',
+  direction = "up",
   duration = 0.5,
-  className = '',
+  className = "",
 }: ScrollRevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
@@ -25,17 +25,17 @@ export default function ScrollReveal({
   const variants = {
     hidden: {
       opacity: 0,
-      ...(direction === 'up' && { y: 40 }),
-      ...(direction === 'down' && { y: -40 }),
-      ...(direction === 'left' && { x: 40 }),
-      ...(direction === 'right' && { x: -40 }),
-      filter: 'blur(4px)',
+      ...(direction === "up" && { y: 40 }),
+      ...(direction === "down" && { y: -40 }),
+      ...(direction === "left" && { x: 40 }),
+      ...(direction === "right" && { x: -40 }),
+      filter: "blur(4px)",
     },
     visible: {
       opacity: 1,
       x: 0,
       y: 0,
-      filter: 'blur(0px)',
+      filter: "blur(0px)",
       transition: {
         duration,
         delay,
@@ -45,7 +45,7 @@ export default function ScrollReveal({
 
   useEffect(() => {
     if (isInView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [isInView, controls]);
 

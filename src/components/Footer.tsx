@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between">
           {/* Credits */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-sm text-white/40"

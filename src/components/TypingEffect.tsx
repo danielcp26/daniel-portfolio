@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface TypingEffectProps {
   text: string;
@@ -18,7 +18,7 @@ export default function TypingEffect({
   cursor = true,
   onComplete,
 }: TypingEffectProps) {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {

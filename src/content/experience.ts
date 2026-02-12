@@ -8,7 +8,8 @@ export const experience = [
     startDate: "October 2025",
     endDate: "Present",
     location: "Remote",
-    description: "Building and maintaining Power BI KPI dashboards replacing legacy Excel reports. Automating data pipelines with Python, Power Automate, and Excel integrations across CRM, support, and survey systems. Focused on data cleaning, validation, bottleneck identification, and trend analysis.",
+    description:
+      "Building and maintaining Power BI KPI dashboards replacing legacy Excel reports. Automating data pipelines with Python, Power Automate, and Excel integrations across CRM, support, and survey systems. Focused on data cleaning, validation, bottleneck identification, and trend analysis.",
     highlights: [
       "Built Power BI dashboards replacing 50+ Excel reports",
       "Automated Python + Power Automate pipelines",
@@ -20,12 +21,13 @@ export const experience = [
     id: 2,
     title: "3D Quality Analyst",
     company: "BMA Group",
-    url: "https://www.bmagroup.com/",
+    url: "https://bmagroupglobal.com/",
     type: "Full-time",
     startDate: "June 2021",
     endDate: "October 2025",
     location: "Remote",
-    description: "Labeled and annotated 3D datasets for autonomous drone navigation systems. Performed quality control and auditing using advanced CV annotation tools. Led process improvement initiatives to enhance data consistency and efficiency.",
+    description:
+      "Labeled and annotated 3D datasets for autonomous drone navigation systems. Performed quality control and auditing using advanced CV annotation tools. Led process improvement initiatives to enhance data consistency and efficiency.",
     highlights: [
       "Labeled 3D datasets for autonomous navigation",
       "QC/auditing with CV annotation tools",
@@ -42,7 +44,8 @@ export const experience = [
     startDate: "May 2024",
     endDate: "Nov 2024",
     location: "Remote",
-    description: "Performed customer behavior analysis and segmentation. Built predictive models for churn and demand forecasting. Created dashboards and visualizations for stakeholder reporting and decision-making.",
+    description:
+      "Performed customer behavior analysis and segmentation. Built predictive models for churn and demand forecasting. Created dashboards and visualizations for stakeholder reporting and decision-making.",
     highlights: [
       "Customer segmentation analysis",
       "Churn and demand prediction models",

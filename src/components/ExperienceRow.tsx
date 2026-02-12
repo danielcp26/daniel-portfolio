@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import ScrollReveal from './ScrollReveal';
+import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 interface ExperienceRowProps {
   title: string;

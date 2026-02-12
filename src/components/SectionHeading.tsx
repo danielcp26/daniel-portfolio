@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import ScrollReveal from './ScrollReveal';
+import ScrollReveal from "./ScrollReveal";
 
 interface SectionHeadingProps {
   title: string;

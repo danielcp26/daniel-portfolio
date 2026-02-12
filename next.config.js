@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  basePath: '/daniel-portfolio',
-  allowedDevOrigins: ["*.preview.same-app.com"],
-  images: {
+const nextConfig = (() => {
+  const isProd = process.env.NODE_ENV === 'production';
+  return {
+    output: 'export',
+    // Only use basePath for production/static deployment (e.g., GitHub Pages)
+    basePath: isProd ? '/daniel-portfolio' : '',
+    allowedDevOrigins: ["*.preview.same-app.com"],
+    images: {
     unoptimized: true,
     domains: [
       "source.unsplash.com",
@@ -34,6 +37,7 @@ const nextConfig = {
       },
     ],
   },
-};
+  };
+})();
 
 module.exports = nextConfig;

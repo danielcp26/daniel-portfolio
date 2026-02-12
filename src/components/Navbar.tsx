@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import OverlayMenu from './OverlayMenu';
+import { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import OverlayMenu from "./OverlayMenu";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,8 +22,8 @@ export default function Navbar() {
           </button>
 
           {/* Initials - right */}
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="text-sm font-medium tracking-wider text-white/90 hover:text-white transition border border-white/20 px-3 py-1.5 rounded"
           >
             D.C.

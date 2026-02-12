@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import ScrollReveal from './ScrollReveal';
+import Link from "next/link";
+import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 interface WorkCardProps {
   title: string;
@@ -12,7 +12,13 @@ interface WorkCardProps {
   delay?: number;
 }
 
-export default function WorkCard({ title, slug, tags, description, delay = 0 }: WorkCardProps) {
+export default function WorkCard({
+  title,
+  slug,
+  tags,
+  description,
+  delay = 0,
+}: WorkCardProps) {
   return (
     <ScrollReveal delay={delay} direction="up">
       <Link href={`/work/${slug}`}>
@@ -25,10 +31,15 @@ export default function WorkCard({ title, slug, tags, description, delay = 0 }: 
               <h3 className="text-xl md:text-2xl font-light mb-2 text-white group-hover:text-[#8B7FFF] transition">
                 {title}
               </h3>
-              <p className="text-sm text-white/60 mb-4 line-clamp-2">{description}</p>
+              <p className="text-sm text-white/60 mb-4 line-clamp-2">
+                {description}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
-                  <span key={tag} className="text-xs px-3 py-1 bg-white/5 text-white/60 rounded-full">
+                  <span
+                    key={tag}
+                    className="text-xs px-3 py-1 bg-white/5 text-white/60 rounded-full"
+                  >
                     {tag}
                   </span>
                 ))}

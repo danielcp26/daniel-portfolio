@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export default function WaveMesh() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -9,7 +9,7 @@ export default function WaveMesh() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -22,7 +22,7 @@ export default function WaveMesh() {
     };
 
     resize();
-    window.addEventListener('resize', resize);
+    window.addEventListener("resize", resize);
 
     const draw = () => {
       const width = canvas.offsetWidth;
@@ -32,7 +32,7 @@ export default function WaveMesh() {
 
       // Draw flowing mesh lines - positioned on right side
       const lineCount = 25;
-      
+
       for (let i = 0; i < lineCount; i++) {
         ctx.beginPath();
         const opacity = 0.08 + (i / lineCount) * 0.12;
@@ -41,22 +41,22 @@ export default function WaveMesh() {
 
         const startX = width * 0.3;
         const phase = time * 0.4 + i * 0.15;
-        
+
         for (let x = startX; x <= width + 50; x += 3) {
           // Create flowing wave pattern
           const progress = (x - startX) / (width - startX);
           const baseY = height * 0.1 + (i / lineCount) * height * 0.9;
-          
+
           // Multiple wave frequencies for organic feel
           const wave1 = Math.sin(progress * 4 + phase) * 60 * progress;
           const wave2 = Math.sin(progress * 2 + phase * 0.7) * 40 * progress;
           const wave3 = Math.cos(progress * 6 + phase * 1.3) * 20 * progress;
-          
+
           // Curve that flows from top-right toward bottom
           const curveOffset = Math.pow(progress, 1.5) * height * 0.3;
-          
+
           const y = baseY + wave1 + wave2 + wave3 + curveOffset;
-          
+
           if (x === startX) {
             ctx.moveTo(x, y);
           } else {
@@ -80,7 +80,9 @@ export default function WaveMesh() {
 
         for (let y = 0; y <= height; y += 4) {
           const progress = y / height;
-          const wave = Math.sin(progress * 3 + phase) * 30 + Math.cos(progress * 5 + phase * 0.8) * 20;
+          const wave =
+            Math.sin(progress * 3 + phase) * 30 +
+            Math.cos(progress * 5 + phase * 0.8) * 20;
           const x = baseX + wave;
 
           if (y === 0) {
@@ -100,7 +102,7 @@ export default function WaveMesh() {
     draw();
 
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
