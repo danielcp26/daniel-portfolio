@@ -86,8 +86,8 @@ export default function OverlayMenu({ isOpen, onClose }: OverlayMenuProps) {
             <div className="hidden md:block w-1/3 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0B0B0B]/60 z-10" />
               <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000"
-                alt="Architecture"
+                src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop"
+                alt="Costa Rica rainforest"
                 fill
                 className="object-cover grayscale"
                 priority

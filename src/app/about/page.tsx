@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { profile } from "@/content/profile";
+import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -151,16 +152,14 @@ export default function AboutPage() {
               </ScrollReveal>
             </div>
 
-            {/* Right - Profile Image (Costa Rica rainforest) */}
+            {/* Right - Profile Image */}
             <ScrollReveal delay={0.2} className="lg:pt-16">
               <div className="relative aspect-square max-w-md mx-auto lg:mx-0 rounded-3xl overflow-hidden">
                 <img
-                  src={
-                    "https://source.unsplash.com/800x800/?costa%20rica,rainforest,nature"
-                  }
-                  alt="Costa Rica rainforest"
+                  src={withBasePath("/projects/Profile%20Picture.jpg")}
+                  alt={profile.name}
                   className="w-full h-full object-cover grayscale"
-                  style={{ objectPosition: "50% 50%" }}
+                  style={{ objectPosition: "50% 22%" }}
                 />
               </div>
             </ScrollReveal>
