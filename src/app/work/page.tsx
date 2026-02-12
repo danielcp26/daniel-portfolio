@@ -42,18 +42,32 @@ export default function WorkPage() {
               viewport={{ once: true, margin: "-100px" }}
               className="relative mb-24"
             >
-              {/* Large background text repeating the first word */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-                <div className="flex gap-24 opacity-[0.06]">
-                  {Array.from({ length: 4 }).map((_, idx) => (
+              {/* Moving background text marquee */}
+              <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+                <motion.div
+                  className="flex items-center gap-24 opacity-[0.06]"
+                  initial={{ x: 0 }}
+                  animate={{ x: [0, -800] }}
+                  transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+                  style={{ willChange: "transform" }}
+                >
+                  {[...Array(8)].map((_, idx) => (
                     <span
-                      key={idx}
+                      key={`marquee-a-${idx}`}
                       className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
                     >
                       {project.title.split(" ")[0]}
                     </span>
                   ))}
-                </div>
+                  {[...Array(8)].map((_, idx) => (
+                    <span
+                      key={`marquee-b-${idx}`}
+                      className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
+                    >
+                      {project.title.split(" ")[0]}
+                    </span>
+                  ))}
+                </motion.div>
               </div>
 
               <Link href={`/work/${project.slug}`} className="group block relative z-10">
