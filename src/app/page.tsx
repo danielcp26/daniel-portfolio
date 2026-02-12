@@ -111,10 +111,10 @@ export default function Home() {
               {/* Moving background text marquee */}
               <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
                 <motion.div
-                  className="flex items-center gap-24 opacity-[0.06]"
+                  className="flex items-center gap-24 opacity-[0.15]"
                   initial={{ x: 0 }}
                   animate={{ x: [0, -800] }}
-                  transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+                  transition={{ duration: 12, ease: "linear", repeat: Infinity }}
                   style={{ willChange: "transform" }}
                 >
                   {[...Array(8)].map((_, idx) => (
