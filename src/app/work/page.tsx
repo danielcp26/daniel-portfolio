@@ -56,7 +56,7 @@ export default function WorkPage() {
                       key={`marquee-a-${idx}`}
                       className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
                     >
-                      {project.title.split(" ")[0]}
+                      {project.tags[0]}
                     </span>
                   ))}
                   {[...Array(8)].map((_, idx) => (
@@ -64,7 +64,7 @@ export default function WorkPage() {
                       key={`marquee-b-${idx}`}
                       className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
                     >
-                      {project.title.split(" ")[0]}
+                      {project.tags[0]}
                     </span>
                   ))}
                 </motion.div>
