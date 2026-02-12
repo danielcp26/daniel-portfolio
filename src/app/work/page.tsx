@@ -30,56 +30,67 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-16 px-6 md:px-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <Link href={`/work/${project.slug}`} className="group block">
-                  {/* Card */}
-                  <div className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 transition">
-                    {/* Image */}
-                    <div className="relative aspect-video overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
-                      />
-                      {/* Overlay gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent opacity-60" />
-                    </div>
+      {/* Projects Showcase (inspired by reference design) */}
+      <section className="py-24 px-6 md:px-16 bg-white">
+        <div className="max-w-7xl mx-auto">
+          {projects.map((project, i) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.05 }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="relative mb-24"
+            >
+              {/* Large background text repeating the first word */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+                <div className="flex gap-24 opacity-[0.06]">
+                  {Array.from({ length: 4 }).map((_, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
+                    >
+                      {project.title.split(" ")[0]}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-                    {/* Content */}
-                    <div className="p-6">
-                      <h3 className="text-xl font-medium text-white mb-2 group-hover:text-[#8B7FFF] transition">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-white/60 mb-4 line-clamp-2">
-                        {project.description}
-                      </p>
-                      <div className="flex gap-2 flex-wrap">
-                        {project.tags.slice(0, 3).map((tag) => (
-                          <span
-                            key={tag}
-                            className="text-xs border border-white/20 text-white/60 px-3 py-1 rounded-full"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+              <Link href={`/work/${project.slug}`} className="group block relative z-10">
+                {/* Centered framed image card */}
+                <div className="mx-auto w-full max-w-3xl rounded-2xl bg-black shadow-[0_20px_60px_rgba(0,0,0,0.25)] overflow-hidden">
+                  <div className="p-4">
+                    <div className="relative rounded-xl overflow-hidden border border-black/30 bg-[#111]">
+                      <div className="aspect-[16/9]">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                </div>
+
+                {/* Title and tags under the card */}
+                <div className="mx-auto max-w-3xl mt-6">
+                  <h3 className="text-xl md:text-2xl font-medium text-black mb-3 group-hover:text-[#5F54FF] transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-black/70"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </section>
 
