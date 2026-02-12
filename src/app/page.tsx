@@ -114,7 +114,7 @@ export default function Home() {
                   className="flex items-center gap-24 opacity-[0.15]"
                   initial={{ x: 0 }}
                   animate={{ x: [0, -800] }}
-                  transition={{ duration: 12, ease: "linear", repeat: Infinity }}
+                  transition={{ duration: 9.6, ease: "linear", repeat: Infinity }}
                   style={{ willChange: "transform" }}
                 >
                   {[...Array(8)].map((_, idx) => (
