@@ -8,6 +8,7 @@ interface TypingEffectProps {
   delay?: number;
   speed?: number;
   cursor?: boolean;
+  cursorClassName?: string;
   onComplete?: () => void;
 }
 
@@ -16,6 +17,7 @@ export default function TypingEffect({
   delay = 0,
   speed = 50,
   cursor = true,
+  cursorClassName = "bg-white/80",
   onComplete,
 }: TypingEffectProps) {
   const [displayedText, setDisplayedText] = useState("");
@@ -50,7 +52,7 @@ export default function TypingEffect({
         <motion.span
           animate={{ opacity: [1, 0] }}
           transition={{ duration: 0.8, repeat: Infinity }}
-          className="inline-block w-0.5 h-[1.2em] bg-black ml-1 align-text-bottom"
+          className={`inline-block w-0.5 h-[1.2em] ml-1 align-text-bottom ${cursorClassName}`}
         />
       )}
     </span>

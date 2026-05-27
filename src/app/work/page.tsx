@@ -1,11 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProjectOverviewGrid from "@/components/ProjectOverviewGrid";
 import { projects } from "@/content/projects";
-import { motion } from "framer-motion";
 
 export default function WorkPage() {
   return (
@@ -13,7 +12,7 @@ export default function WorkPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 md:px-16">
+      <section className="px-6 pb-16 pt-32 md:px-16">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <p className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">
@@ -30,81 +29,27 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* Projects Showcase (inspired by reference design) */}
-      <section className="py-24 px-6 md:px-16 bg-white">
-        <div className="max-w-7xl mx-auto">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.05 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="relative mb-24"
-            >
-              {/* Moving background text marquee */}
-              <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-                <motion.div
-                  className="flex items-center gap-24 opacity-[0.15]"
-                  initial={{ x: 0 }}
-                  animate={{ x: [0, -800] }}
-                  transition={{ duration: 9.6, ease: "linear", repeat: Infinity }}
-                  style={{ willChange: "transform" }}
-                >
-                  {[...Array(8)].map((_, idx) => (
-                    <span
-                      key={`marquee-a-${idx}`}
-                      className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
-                    >
-                      {project.tags[0]}
-                    </span>
-                  ))}
-                  {[...Array(8)].map((_, idx) => (
-                    <span
-                      key={`marquee-b-${idx}`}
-                      className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
-                    >
-                      {project.tags[0]}
-                    </span>
-                  ))}
-                </motion.div>
+      {/* Work Overview */}
+      <section className="border-t border-white/10 px-6 py-20 md:px-16">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal>
+            <div className="mb-14 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] lg:items-end">
+              <div>
+                <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                  OVERVIEW
+                </p>
+                <h2 className="text-4xl font-light text-white md:text-5xl">
+                  Project Archive
+                </h2>
               </div>
+              <p className="max-w-2xl text-base leading-relaxed text-white/58 md:text-lg">
+                A quick scan of the full body of work, with each project framed
+                by its domain, year, stack, and outcome.
+              </p>
+            </div>
+          </ScrollReveal>
 
-              <Link href={`/work/${project.slug}`} className="group block relative z-10">
-                {/* Centered framed image card */}
-                <div className="mx-auto w-full max-w-3xl rounded-2xl bg-black shadow-[0_20px_60px_rgba(0,0,0,0.25)] overflow-hidden">
-                  <div className="p-4">
-                    <div className="relative rounded-xl overflow-hidden border border-black/30 bg-[#111]">
-                      <div className="aspect-[16/9]">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Title and tags under the card */}
-                <div className="mx-auto max-w-3xl mt-6">
-                  <h3 className="text-xl md:text-2xl font-medium text-black mb-3 group-hover:text-[#5F54FF] transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-black/70"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+          <ProjectOverviewGrid projects={projects} />
         </div>
       </section>
 

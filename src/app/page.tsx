@@ -3,11 +3,9 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SectionHeading from "@/components/SectionHeading";
-import WorkCard from "@/components/WorkCard";
-import ExperienceRow from "@/components/ExperienceRow";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import ScrollReveal from "@/components/ScrollReveal";
-// TypingEffect removed; using static hero copy per request
+import HeroIntro from "@/components/HeroIntro";
 import WaveMesh from "@/components/WaveMesh";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
@@ -20,46 +18,14 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section - Dark with Wave Mesh */}
+      {/* Hero Section */}
       <section className="min-h-screen relative flex flex-col justify-center bg-[var(--bg)] overflow-hidden">
-        {/* Wave Mesh Background */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none bg-[#0B0B0B]">
           <WaveMesh />
         </div>
 
         <div className="relative z-10 px-6 md:px-16 pt-24 pb-32">
-          <div className="max-w-5xl">
-            {/* Main Headline - updated copy */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] text-white mb-4"
-            >
-              Hi, I'm <span className="font-medium">Daniel.</span>
-            </motion.h1>
-
-            {/* Large supporting line */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-light text-white/60 mb-6"
-            >
-              I turn complex data into operational clarity.
-            </motion.div>
-
-            {/* Short descriptor */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.6 }}
-              className="text-base md:text-lg text-white/50 max-w-md font-light leading-relaxed"
-            >
-              Building KPI systems, automation pipelines, and decision
-              intelligence.
-            </motion.p>
-          </div>
+          <HeroIntro />
         </div>
 
         {/* Scroll Indicator */}
@@ -69,7 +35,7 @@ export default function Home() {
           transition={{ delay: 3, duration: 0.8 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <a href="#work" className="block">
+          <a href="#featured-work" className="block">
             <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white/60 transition cursor-pointer">
               <motion.div
                 animate={{ y: [0, 4, 0] }}
@@ -85,99 +51,32 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Selected Work Section (mirrors Work page design) */}
-      <section id="work" className="py-24 px-6 bg-white">
+      {/* Featured Work Section */}
+      <section
+        id="featured-work"
+        className="relative overflow-hidden bg-[var(--bg)] px-6 py-24 md:px-16"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_8%,rgba(139,127,255,0.12),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_24%)]" />
         <div className="max-w-7xl mx-auto">
           <ScrollReveal>
-            <div className="mb-16">
-              <p className="text-xs tracking-[0.2em] uppercase text-black/40 mb-4">
-                SELECTED WORK
+            <div className="relative mb-16 md:mb-24">
+              <p className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">
+                FEATURED WORK
               </p>
-              <h2 className="text-4xl md:text-5xl font-light text-black">
-                Featured Projects (3)
+              <h2 className="text-4xl md:text-5xl font-light text-white">
+                Selected Projects (3)
               </h2>
             </div>
           </ScrollReveal>
 
-          {projects.slice(0, 3).map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="relative mb-24"
-            >
-              {/* Moving background text marquee */}
-              <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-                <motion.div
-                  className="flex items-center gap-24 opacity-[0.15]"
-                  initial={{ x: 0 }}
-                  animate={{ x: [0, -800] }}
-                  transition={{ duration: 9.6, ease: "linear", repeat: Infinity }}
-                  style={{ willChange: "transform" }}
-                >
-                  {[...Array(8)].map((_, idx) => (
-                    <span
-                      key={`home-marquee-a-${idx}`}
-                      className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
-                    >
-                      {project.tags[0]}
-                    </span>
-                  ))}
-                  {[...Array(8)].map((_, idx) => (
-                    <span
-                      key={`home-marquee-b-${idx}`}
-                      className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-extrabold uppercase tracking-tight text-black"
-                    >
-                      {project.tags[0]}
-                    </span>
-                  ))}
-                </motion.div>
-              </div>
-
-              <Link href={`/work/${project.slug}`} className="group block relative z-10">
-                {/* Centered framed image card */}
-                <div className="mx-auto w-full max-w-3xl rounded-2xl bg-black shadow-[0_20px_60px_rgba(0,0,0,0.25)] overflow-hidden">
-                  <div className="p-4">
-                    <div className="relative rounded-xl overflow-hidden border border-black/30 bg-[#111]">
-                      <div className="aspect-[16/9]">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Title and tags */}
-                <div className="mx-auto max-w-3xl mt-6">
-                  <h3 className="text-xl md:text-2xl font-medium text-black mb-3 group-hover:text-[#5F54FF] transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1.5 rounded-full border border-black/10 bg-black/[0.03] text-black/70"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+          <ProjectShowcase projects={projects.slice(0, 3)} />
 
           <ScrollReveal delay={0.3} className="mt-2 text-center">
             <Link
               href="/work"
-              className="inline-block text-sm font-light text-black/60 hover:text-[#5F54FF] transition"
+              className="inline-block rounded border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-light text-white/60 hover:border-[#f0c27a]/40 hover:text-[#f0c27a] transition"
             >
-              View all projects →
+              See more projects →
             </Link>
           </ScrollReveal>
         </div>

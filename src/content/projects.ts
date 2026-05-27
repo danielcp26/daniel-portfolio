@@ -55,9 +55,9 @@ export const projects = [
     link: "https://github.com/danielcp26/ML_Projects/blob/main/CRautos%20Prediction.ipynb",
     dashboardLink:
       "https://github.com/danielcp26/ML_Projects/blob/main/CrAutos%20Analysis.pdf",
-    image: withBasePath("/images/projects/crautos/cover.webp"),
+    image: withBasePath("/images/projects/crautos/cover-retro.png"),
     images: {
-      cover: withBasePath("/images/projects/crautos/cover.webp"),
+      cover: withBasePath("/images/projects/crautos/cover-retro.png"),
       detail1: withBasePath("/images/projects/crautos/detail-1.webp"),
       detail2: withBasePath("/images/projects/crautos/detail-2.webp"),
     },
@@ -113,9 +113,13 @@ export const projects = [
       value: "92%",
     },
     link: "https://github.com/danielcp26/MedicalAssistantBot",
-    image: withBasePath("/images/projects/medical-assistant-bot/cover.webp"),
+    image: withBasePath(
+      "/images/projects/medical-assistant-bot/cover-retro.png",
+    ),
     images: {
-      cover: withBasePath("/images/projects/medical-assistant-bot/cover.webp"),
+      cover: withBasePath(
+        "/images/projects/medical-assistant-bot/cover-retro.png",
+      ),
       detail1: withBasePath(
         "/images/projects/medical-assistant-bot/detail-1.webp",
       ),
@@ -176,9 +180,9 @@ export const projects = [
       value: "0.76",
     },
     link: "https://github.com/danielcp26/MIT_Data_Science_Projects/blob/main/Regression%20Project%20Boston%20House%20Price%20Prediction.ipynb",
-    image: withBasePath("/images/projects/boston-housing/cover.webp"),
+    image: withBasePath("/images/projects/boston-housing/cover-retro.png"),
     images: {
-      cover: withBasePath("/images/projects/boston-housing/cover.webp"),
+      cover: withBasePath("/images/projects/boston-housing/cover-retro.png"),
       detail1: withBasePath("/images/projects/boston-housing/detail-1.webp"),
       detail2: withBasePath("/images/projects/boston-housing/detail-2.webp"),
     },
@@ -235,9 +239,9 @@ export const projects = [
       value: "200+",
     },
     link: "https://github.com/danielcp26/SQL_Projects/blob/main/CovidProjectSQL.sql",
-    image: withBasePath("/images/projects/covid-sql/cover.webp"),
+    image: withBasePath("/images/projects/covid-sql/cover-retro.png"),
     images: {
-      cover: withBasePath("/images/projects/covid-sql/cover.webp"),
+      cover: withBasePath("/images/projects/covid-sql/cover-retro.png"),
       detail1: withBasePath("/images/projects/covid-sql/detail-1.webp"),
       detail2: withBasePath("/images/projects/covid-sql/detail-2.webp"),
     },
@@ -293,9 +297,11 @@ export const projects = [
       description: "Processed and standardized 56,000+ property records",
     },
     link: "https://github.com/danielcp26/SQL_Projects/blob/main/Nashville_Housing.sql",
-    image: withBasePath("/images/projects/nashville-housing/cover.webp"),
+    image: withBasePath("/images/projects/nashville-housing/cover-retro.png"),
     images: {
-      cover: withBasePath("/images/projects/nashville-housing/cover.webp"),
+      cover: withBasePath(
+        "/images/projects/nashville-housing/cover-retro.png",
+      ),
       detail1: withBasePath("/images/projects/nashville-housing/detail-1.webp"),
       detail2: withBasePath("/images/projects/nashville-housing/detail-2.webp"),
     },
@@ -351,9 +357,9 @@ export const projects = [
       value: "3,500+",
     },
     link: "https://public.tableau.com/views/BritishAirwaysReview_17443423700870/Dashboard1?:language=es-ES&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-    image: withBasePath("/images/projects/british-airways/cover.webp"),
+    image: withBasePath("/images/projects/british-airways/cover-retro.png"),
     images: {
-      cover: withBasePath("/images/projects/british-airways/cover.webp"),
+      cover: withBasePath("/images/projects/british-airways/cover-retro.png"),
       detail1: withBasePath("/images/projects/british-airways/detail-1.webp"),
       detail2: withBasePath("/images/projects/british-airways/detail-2.webp"),
     },

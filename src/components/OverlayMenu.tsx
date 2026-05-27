@@ -37,7 +37,7 @@ export default function OverlayMenu({ isOpen, onClose }: OverlayMenuProps) {
 
   const menuItems = [
     { label: "Home", href: "/" },
-    { label: "Work", href: "/#work" },
+    { label: "Work", href: "/work" },
     { label: "About", href: "/about" },
     { label: "Contact", href: `mailto:${profile.email}` },
   ];
