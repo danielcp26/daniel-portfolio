@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ProjectShowcase from "@/components/ProjectShowcase";
+import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroIntro from "@/components/HeroIntro";
 import WaveMesh from "@/components/WaveMesh";
@@ -35,7 +34,7 @@ export default function Home() {
           transition={{ delay: 3, duration: 0.8 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <a href="#featured-work" className="block">
+          <a href="#capabilities" className="block">
             <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:border-white/60 transition cursor-pointer">
               <motion.div
                 animate={{ y: [0, 4, 0] }}
@@ -51,36 +50,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Featured Work Section */}
-      <section
-        id="featured-work"
-        className="relative overflow-hidden bg-[var(--bg)] px-6 py-24 md:px-16"
-      >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_8%,rgba(139,127,255,0.12),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_24%)]" />
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal>
-            <div className="relative mb-16 md:mb-24">
-              <p className="text-xs tracking-[0.2em] uppercase text-white/40 mb-4">
-                FEATURED WORK
-              </p>
-              <h2 className="text-4xl md:text-5xl font-light text-white">
-                Selected Projects (3)
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <ProjectShowcase projects={projects.slice(0, 3)} />
-
-          <ScrollReveal delay={0.3} className="mt-2 text-center">
-            <Link
-              href="/work"
-              className="inline-block rounded border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-light text-white/60 hover:border-[#f0c27a]/40 hover:text-[#f0c27a] transition"
-            >
-              See more projects →
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
+      <CapabilitiesSection projects={projects} />
 
       {/* Worked With Section - Clickable Links Style */}
       <section className="py-24 px-6 bg-[var(--bg)]">

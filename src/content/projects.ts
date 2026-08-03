@@ -62,7 +62,7 @@ export const projects = [
       detail2: withBasePath("/images/projects/crautos/detail-2.webp"),
     },
     period: "2024",
-    category: "Machine Learning",
+    category: "Data Science",
   },
   {
     id: 2,
@@ -128,7 +128,7 @@ export const projects = [
       ),
     },
     period: "2024",
-    category: "Machine Learning",
+    category: "Data Science",
   },
   {
     id: 3,
@@ -187,7 +187,7 @@ export const projects = [
       detail2: withBasePath("/images/projects/boston-housing/detail-2.webp"),
     },
     period: "2024",
-    category: "Data Analysis",
+    category: "Data Science",
   },
   {
     id: 4,
@@ -246,7 +246,7 @@ export const projects = [
       detail2: withBasePath("/images/projects/covid-sql/detail-2.webp"),
     },
     period: "2023",
-    category: "Data Engineering",
+    category: "Data Analysis",
   },
   {
     id: 5,
@@ -306,7 +306,7 @@ export const projects = [
       detail2: withBasePath("/images/projects/nashville-housing/detail-2.webp"),
     },
     period: "2023",
-    category: "Data Engineering",
+    category: "Data Science",
   },
   {
     id: 6,
@@ -364,6 +364,62 @@ export const projects = [
       detail2: withBasePath("/images/projects/british-airways/detail-2.webp"),
     },
     period: "2024",
-    category: "Data Visualization",
+    category: "Data Analysis",
+  },
+  {
+    id: 7,
+    title: "SmartData Databricks Lakehouse Pipeline",
+    slug: "smartdata-databricks",
+    tags: ["Databricks", "PySpark", "Delta Lake"],
+    description:
+      "Built an Azure Databricks lakehouse ETL pipeline for Olist e-commerce data using Medallion architecture, Unity Catalog, ADLS Gen2, and CI/CD deployment.",
+    overview:
+      "Designed and implemented a cloud data engineering project in Azure Databricks that transforms raw Olist e-commerce datasets through Bronze, Silver, and Golden lakehouse layers for curated analytics and reliable downstream reporting.",
+    context:
+      "Modern analytics teams need governed, repeatable pipelines that turn raw operational data into trusted business-ready tables. This project demonstrates a complete Databricks workflow using cloud storage, Delta Lake, catalog governance, and automated deployment practices.",
+    objective:
+      "Build a production-style data pipeline that ingests raw e-commerce files, applies transformations and quality rules across Medallion layers, and publishes curated datasets for analytics consumption.",
+    role: [
+      "Lakehouse architecture design using Bronze, Silver, and Golden layers",
+      "PySpark ETL development in Azure Databricks notebooks",
+      "Delta Lake table creation and transformation workflow implementation",
+      "Unity Catalog organization and access-control setup",
+      "GitHub Actions deployment workflow configuration",
+    ],
+    approach: [
+      "Ingested Olist e-commerce datasets into Azure Data Lake Storage Gen2",
+      "Created Bronze raw ingestion tables to preserve source-level data",
+      "Built Silver transformations for cleaning, standardization, joins, and quality checks",
+      "Modeled Golden analytics tables for business-ready reporting and downstream analysis",
+      "Organized assets through Unity Catalog and workspace structure",
+      "Configured repository-driven deployment patterns with GitHub Actions",
+    ],
+    insights: [
+      "Implemented an end-to-end Medallion architecture workflow",
+      "Separated raw, cleaned, and analytics-ready datasets for stronger governance",
+      "Used PySpark and Delta Lake patterns suited for scalable cloud transformation",
+      "Demonstrated practical Databricks project organization and deployment",
+    ],
+    technologies: [
+      "Azure Databricks",
+      "PySpark",
+      "Delta Lake",
+      "Unity Catalog",
+      "ADLS Gen2",
+      "GitHub Actions",
+      "Medallion Architecture",
+    ],
+    results: {
+      metric: "Pipeline Architecture",
+      value: "Bronze / Silver / Golden",
+      description:
+        "Delivered a structured lakehouse pipeline from raw e-commerce data to curated analytics layers.",
+    },
+    link: "https://github.com/danielcp26/SmartData_Databricks_Project_",
+    image: withBasePath(
+      "/images/projects/smartdata-databricks/cover-retro.png",
+    ),
+    period: "2025",
+    category: "Data Engineering",
   },
 ];

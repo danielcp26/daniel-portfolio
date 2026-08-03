@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProjectOverviewGrid from "@/components/ProjectOverviewGrid";
 import { projects } from "@/content/projects";
+import { capabilities } from "@/content/capabilities";
 
 export default function WorkPage() {
   return (
@@ -22,8 +23,8 @@ export default function WorkPage() {
               Work ({projects.length})
             </h1>
             <p className="text-lg md:text-xl leading-relaxed max-w-2xl text-white/60">
-              A collection of projects spanning machine learning, data analysis,
-              and data engineering.
+              A collection of projects grouped across data analysis, data
+              engineering, and data science.
             </p>
           </ScrollReveal>
         </div>
@@ -32,24 +33,35 @@ export default function WorkPage() {
       {/* Work Overview */}
       <section className="border-t border-white/10 px-6 py-20 md:px-16">
         <div className="mx-auto max-w-7xl">
-          <ScrollReveal>
-            <div className="mb-14 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)] lg:items-end">
-              <div>
-                <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
-                  OVERVIEW
-                </p>
-                <h2 className="text-4xl font-light text-white md:text-5xl">
-                  Project Archive
-                </h2>
-              </div>
-              <p className="max-w-2xl text-base leading-relaxed text-white/58 md:text-lg">
-                A quick scan of the full body of work, with each project framed
-                by its domain, year, stack, and outcome.
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="space-y-20">
+            {capabilities.map((capability) => {
+              const capabilityProjects = projects.filter(
+                (project) => project.category === capability.projectCategory,
+              );
 
-          <ProjectOverviewGrid projects={projects} />
+              return (
+                <section key={capability.id} id={capability.id}>
+                  <ScrollReveal>
+                    <div className="mb-10 grid gap-6 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1fr)] lg:items-end">
+                      <div>
+                        <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                          {capability.label}
+                        </p>
+                        <h2 className="text-4xl font-light text-white md:text-5xl">
+                          {capabilityProjects.length} Projects
+                        </h2>
+                      </div>
+                      <p className="max-w-2xl text-base leading-relaxed text-white/58 md:text-lg">
+                        {capability.summary}
+                      </p>
+                    </div>
+                  </ScrollReveal>
+
+                  <ProjectOverviewGrid projects={capabilityProjects} />
+                </section>
+              );
+            })}
+          </div>
         </div>
       </section>
 
