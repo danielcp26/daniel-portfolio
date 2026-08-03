@@ -152,14 +152,23 @@ export default function CapabilitiesSection({
                         href={certification.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group rounded-md border border-white/10 bg-black/16 p-4 transition hover:border-[#f0c27a]/35 hover:bg-white/[0.045]"
+                        className="group grid grid-cols-[3.25rem_minmax(0,1fr)] gap-3 rounded-md border border-white/10 bg-black/16 p-3 transition hover:border-[#f0c27a]/35 hover:bg-white/[0.045]"
                       >
-                        <p className="mb-2 text-sm leading-snug text-white transition group-hover:text-[#f0c27a]">
-                          {certification.title}
-                        </p>
-                        <p className="text-xs uppercase tracking-[0.14em] text-white/36">
-                          {certification.issuer}
-                        </p>
+                        <div className="flex h-[3.25rem] w-[3.25rem] items-center justify-center rounded bg-white/[0.035] p-1.5">
+                          <img
+                            src={certification.thumbnail}
+                            alt=""
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
+                        <div className="min-w-0 py-0.5">
+                          <p className="mb-2 text-sm leading-snug text-white transition group-hover:text-[#f0c27a]">
+                            {certification.title}
+                          </p>
+                          <p className="text-xs uppercase tracking-[0.14em] text-white/36">
+                            {certification.issuer}
+                          </p>
+                        </div>
                       </a>
                     ))
                   )}
