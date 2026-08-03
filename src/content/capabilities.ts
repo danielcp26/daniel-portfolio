@@ -41,6 +41,16 @@ export const capabilities: Capability[] = [
         issuer: "SmartData",
         url: "https://smartdata.com.pe/certificados/index.php?id=56428",
       },
+      {
+        title: "Academy Accreditation - Platform Administrator",
+        issuer: "Databricks",
+        url: "https://credentials.databricks.com/79aa7d42-6dd1-4c8c-bc79-b36882f704ee#acc.RD6NFzfr",
+      },
+      {
+        title: "Academy Accreditation - Databricks Fundamentals",
+        issuer: "Databricks",
+        url: "https://credentials.databricks.com/a842f40b-99ea-4199-8ff5-2a9380130bab#acc.ZFrta3e4",
+      },
     ],
   },
   {
@@ -60,6 +70,11 @@ export const capabilities: Capability[] = [
           "Applied Data Science Program: Leveraging AI for Effective Decision-Making",
         issuer: "MIT Professional Education",
         url: "https://credentials.professional.mit.edu/49cd825e-fe38-4fc6-bac0-ea2981643e23#acc.GBE3VbSF",
+      },
+      {
+        title: "Databases and SQL for Data Science with Python",
+        issuer: "IBM",
+        url: "https://www.coursera.org/account/accomplishments/verify/MS1JSG5VQV0E",
       },
     ],
   },
