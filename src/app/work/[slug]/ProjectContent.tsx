@@ -31,7 +31,7 @@ type Project = {
   images?: {
     cover: string;
     detail1: string;
-    detail2: string;
+    detail2?: string;
     detail3?: string;
   };
   period: string;
@@ -552,25 +552,27 @@ export default function ProjectContent({
                     </motion.div>
 
                     {/* Detail Image 2 */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                      viewport={{ once: true }}
-                      className="relative aspect-video rounded-xl overflow-hidden bg-white/5"
-                    >
-                      <button
-                        onClick={() => openModal(project.images?.detail2)}
-                        className="w-full h-full"
-                        aria-label="Open image 2"
+                    {project.images.detail2 && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="relative aspect-video rounded-xl overflow-hidden bg-white/5"
                       >
-                        <img
-                          src={project.images.detail2}
-                          alt={`${project.title} - Detail view 2`}
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    </motion.div>
+                        <button
+                          onClick={() => openModal(project.images?.detail2)}
+                          className="w-full h-full"
+                          aria-label="Open image 2"
+                        >
+                          <img
+                            src={project.images.detail2}
+                            alt={`${project.title} - Detail view 2`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      </motion.div>
+                    )}
 
                     {/* Detail Image 3 (optional) */}
                     {project.images.detail3 && (

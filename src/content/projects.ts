@@ -419,6 +419,14 @@ export const projects = [
     image: withBasePath(
       "/images/projects/smartdata-databricks/cover-retro.png",
     ),
+    images: {
+      cover: withBasePath(
+        "/images/projects/smartdata-databricks/cover-retro.png",
+      ),
+      detail1: withBasePath(
+        "/images/projects/smartdata-databricks/dashboard-overview.png",
+      ),
+    },
     period: "2025",
     category: "Data Engineering",
   },
